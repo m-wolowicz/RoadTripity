@@ -1,0 +1,28 @@
+/*Creating our own CSS Style for the project*/
+
+/*Styles that apply to the entire page*/
+body {
+    background-color: #fafafa;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*JUMBOTRON*/
+.jumbotron {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+	color: white;
+}
+
+.jumbotron h1 {
+	font-family: 'Righteous', cursive;
+	font-size: 65px;
+}
+
+.jumbotron p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+    font-weight: 400;
+}
