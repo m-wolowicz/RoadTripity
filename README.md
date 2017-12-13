@@ -41,3 +41,23 @@ The application will use another API to retrieve weather conditions of the desti
 - Google Maps APIs (Might encompass multiple ones)
 - Wunderground API
 
+### Sketch of Final Product:
+
+![Sketch of final Product](images/sketchFinalProduct.jpg)
+
+### Rough Breakdown of Tasks:
+
+- [x] Create HTML and CSS layout and syle (@m-wolowicz)
+- [x] Create user input form, fields, and submit button (@keissyleonardo)
+- [x] Create the MAP and trip data results with Google MAPS APIs (@boyrajat)
+- [x] Create the Weather results with Wunderground API (@RyanMoven)
+- [x] Create the table that displays the previous road trips using Firebase (@keissyleonardo)
+- [x] Create the funny recommendations area based on weather results (@m-wolowicz)
+
+- [x] Find a new library or technology that we haven't discussed in class to incorporate into project (Everyone)
+
+- - -
+
+#### Copyright
+
+Keissy Leonardo (@keissyleonardo), Melissa Wolowicz (@m-wolowicz), Rajat Narula (@boyrajat), Ryan Moven (@RyanMoven) (C) 2017. All Rights Reserved.
