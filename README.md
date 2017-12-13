@@ -19,7 +19,7 @@ Week 08-09 Group Project 1
 * Must be Deployed (GitHub Pages or Firebase)
 * Must have User Input Validation
 
-### Project Title: (hidden)
+## Project Title: (hidden)
 
 ### Team Members:
 
