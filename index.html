@@ -14,7 +14,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Linking jQuery CDN -->
-
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 	<!-- BOOTSTRAP 3: Latest compiled and minified CSS -->
@@ -22,7 +21,6 @@
 
 	<!-- Linking our own CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
 
 	<!-- Linking our own JAVASCRIPT -->
 	<script type="text/javascript" src="assets/javascript/script.js"></script>
@@ -32,12 +30,12 @@
     </script> -->
 
 	<!-- Linking Google Web Fonts -->
-
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous" rel="stylesheet">
 
 	<!-- Linking Google Firebase Database -->
 
 
-	<title>RoadTripity</title>
+	<title>RoadTripity: Plan Your Next Road Trip</title>
 
 </head>
 <body>
@@ -49,50 +47,96 @@
 <div class="jumbotron">
 	<div class="container">
 		<h1>RoadTripity!</h1>
-		<p>Plan your next road trip, with the help of RoadTripity. To begin, enter the address for the starting point and ending point of your trip.</p>
+		<p>Plan your next road trip with the help of RoadTripity. To begin, simply enter the address of the begining of your journey and the address for your final destination.</p>
 	</div>
 </div>
 <!-- End Jumbotron -->
 
-<!-- Google map direrction service API display -->
-	<div id="floating-panel">
-      <strong>Start:</strong>
-      <select id="start">
-        <option value="chicago, il">Chicago</option>
-        <option value="st louis, mo">St Louis</option>
-        <option value="joplin, mo">Joplin, MO</option>
-        <option value="oklahoma city, ok">Oklahoma City</option>
-        <option value="amarillo, tx">Amarillo</option>
-        <option value="gallup, nm">Gallup, NM</option>
-        <option value="flagstaff, az">Flagstaff, AZ</option>
-        <option value="winona, az">Winona</option>
-        <option value="kingman, az">Kingman</option>
-        <option value="barstow, ca">Barstow</option>
-        <option value="san bernardino, ca">San Bernardino</option>
-        <option value="los angeles, ca">Los Angeles</option>
-      </select>
-      <br>
-      <strong>End:</strong>
-      <select id="end">
-        <option value="chicago, il">Chicago</option>
-        <option value="st louis, mo">St Louis</option>
-        <option value="joplin, mo">Joplin, MO</option>
-        <option value="oklahoma city, ok">Oklahoma City</option>
-        <option value="amarillo, tx">Amarillo</option>
-        <option value="gallup, nm">Gallup, NM</option>
-        <option value="flagstaff, az">Flagstaff, AZ</option>
-        <option value="winona, az">Winona</option>
-        <option value="kingman, az">Kingman</option>
-        <option value="barstow, ca">Barstow</option>
-        <option value="san bernardino, ca">San Bernardino</option>
-        <option value="los angeles, ca">Los Angeles</option>
-      </select>
-    </div>
+<!--Begin Page Content-->
+<div class="container-fluid" id="pageContainer">
+
+	<!--Begin Section 1: User input form-->
+	<div class="container-fluid" id="inputFormContainer">
+		<div class="container">
+			<div class="col-xs-12" id="inputFormDiv">
+				<h2>WHERE WOULD YOU LIKE TO GO?</h2>
+				<!-- FORM -->
+				
+			</div>
+		</div>
+	</div>
+	<!--End Section 1: User input form-->
+
+	<!--Begin Section 2: Map Results-->
+	<div class="col-xs-12" id="mapResultsDiv">
     
-    <div id="right-panel"></div>
-    <div id="map"></div>
-    <hr>
-<!-- Google map directions service API display end -->
+    <!-- Google map direrction service API display -->
+      <div id="floating-panel">
+          <strong>Start:</strong>
+          <select id="start">
+            <option value="chicago, il">Chicago</option>
+            <option value="st louis, mo">St Louis</option>
+            <option value="joplin, mo">Joplin, MO</option>
+            <option value="oklahoma city, ok">Oklahoma City</option>
+            <option value="amarillo, tx">Amarillo</option>
+            <option value="gallup, nm">Gallup, NM</option>
+            <option value="flagstaff, az">Flagstaff, AZ</option>
+            <option value="winona, az">Winona</option>
+            <option value="kingman, az">Kingman</option>
+            <option value="barstow, ca">Barstow</option>
+            <option value="san bernardino, ca">San Bernardino</option>
+            <option value="los angeles, ca">Los Angeles</option>
+          </select>
+          <br>
+          <strong>End:</strong>
+          <select id="end">
+            <option value="chicago, il">Chicago</option>
+            <option value="st louis, mo">St Louis</option>
+            <option value="joplin, mo">Joplin, MO</option>
+            <option value="oklahoma city, ok">Oklahoma City</option>
+            <option value="amarillo, tx">Amarillo</option>
+            <option value="gallup, nm">Gallup, NM</option>
+            <option value="flagstaff, az">Flagstaff, AZ</option>
+            <option value="winona, az">Winona</option>
+            <option value="kingman, az">Kingman</option>
+            <option value="barstow, ca">Barstow</option>
+            <option value="san bernardino, ca">San Bernardino</option>
+            <option value="los angeles, ca">Los Angeles</option>
+          </select>
+        </div>
+
+        <div id="right-panel"></div>
+        <div id="map"></div>
+        <hr>
+    <!-- Google map directions service API display end -->
+  </div>
+  <!--End Section 2: Map Results-->
+  
+	<!--Begin Section 3: Weather and Recommendations results-->
+	<div class="col-xs-12" id="wrResultsDiv">
+		<!--Weather Results-->
+		<div class="col-xs-6" id="weatherResultsDiv">
+
+		</div>
+
+		<!--Recommendations-->
+		<div class="col-xs-6" id="recommendationsDiv">
+
+		</div>
+
+	</div>
+	<!--End Section 3: Weather and Recommendations results-->
+
+	<!--Begin Section 4: Past Adventures-->
+	<div class="col-xs-12" id="pastAdventuresDiv">
+
+	</div>
+	<!--End Section 4: Past Adventures-->
+
+	<!--Footer-->
+
+</div>
+<!--End Page Content-->
 
 <!-- These 2 script tags need to be in HTML per googlemaps API.
 Cannot be moved to seperate .js file due to API restrictions. -->
@@ -137,5 +181,6 @@ Cannot be moved to seperate .js file due to API restrictions. -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTGIHpFEDWOSxrj0u5EWP30GfzwyFbMR4&callback=initMap">
     </script>
+
   </body>
 </html>
