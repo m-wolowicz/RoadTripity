@@ -43,7 +43,7 @@ The application will use another API to retrieve weather conditions of the desti
 
 ### Sketch of Final Product:
 
-![Sketch of final Product](images/sketchFinalProduct.jpg)
+![Sketch of final Product](https://github.com/m-wolowicz/Project1-Group5/blob/master/assets/images/sketchFinalProduct.jpg)
 
 ### Rough Breakdown of Tasks:
 
