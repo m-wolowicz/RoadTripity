@@ -2,19 +2,19 @@
 
 /*Styles that apply to the entire page*/
 html {
-	position: relative;
-	min-height: 100%;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    background-color: #dddfd4;
+  background-color: #dddfd4;
 	font-family: 'Montserrat', sans-serif;
 	margin-bottom: 60px;
 }
 
 #pageContainer {
-	padding-left: 0px;
-	padding-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 
@@ -26,19 +26,19 @@ body {
     background-position: center;
     -webkit-background-size: cover;
     background-size: cover;
-	color: white;
-	margin-bottom: 0px;
+  color: white;
+  margin-bottom: 0px;
 }
 
 .jumbotron h1 {
-	font-family: 'Righteous', cursive;
-	font-size: 65px;
-	color: #fae596;
+  font-family: 'Righteous', cursive;
+  font-size: 65px;
+  color: #fae596;
 }
 
 .jumbotron p {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
     font-weight: 400;
 }
 
@@ -46,18 +46,19 @@ body {
 
 /* FORM SECTION */
 #inputFormContainer {
-	background-color: #3fb0ac;
-	padding-left: 0px;
-	padding-right: 0px;
+  background-color: #3fb0ac;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 #inputFormDiv {
-	color: white;
-	padding-top: 50px;
-	padding-bottom: 50px;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 #inputFormDiv h2 {
+
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 	margin-top: 0px;
@@ -80,11 +81,11 @@ body {
 }
 
 #inputFormDiv input {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
-	font-size: 15px;
-	height: 40px;
-	font-style: italic;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  height: 40px;
+  font-style: italic;
 }
 
 #inputFormDiv button {
@@ -101,8 +102,8 @@ body {
 }
 
 #inputFormDiv button:hover {
-	background-color: #173e43;
-	color: #fae596;
+  background-color: #173e43;
+  color: #fae596;
 }
 
 
@@ -120,23 +121,13 @@ html, body {
   margin: 0;
   padding: 0;
 }
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
+
+
 #right-panel {
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
-  padding-left: 10px;
+  padding-left: 90px;
+  padding-right: 90px;
 }
 
 #right-panel select, #right-panel input {
@@ -153,30 +144,27 @@ html, body {
 #right-panel {
   height: 40%;
   float: left;
-  max-width: 390px;
+  width: 40%;
   overflow: auto;
 }
 #map {
   margin: 0 auto;
 }
-#floating-panel {
-  background: #fff;
-  padding: 5px;
-  font-size: 14px;
-  font-family: Arial;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-  display: none;
-}
+
+
 @media print {
   #map {
     height: 500px;
     margin: 0;
   }
   #right-panel {
-    float: right;
+    float: left;
     width: auto;
   }
+}
+
+.adp {
+  max-width: 971px;
 }
 
 
@@ -273,6 +261,7 @@ html, body {
   display: table;
   height: 100%;
 }
+
 #footer p {
   display: table-cell;
   margin: 0;
