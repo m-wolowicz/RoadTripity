@@ -12,7 +12,7 @@ $('#end').on('click', function(){
   dataType : "jsonp",
   async: false,
   success : function(parsed_json) {
-  var temp_f = parsed_json['current_observation']['temp_f'];
+  var temp_f = parsed_json.current_observation.icon
   $("#weatherResultsDiv").append("<p>" + "Current temperature in " + city + " is:"  + temp_f + "</p>");
   }
   		}); // end of Ajax call
