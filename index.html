@@ -50,20 +50,73 @@
 
 <div class="container-fluid" id="pageContainer">
 
+
 	<!--Begin Section 1: User input form-->
 		<div class="container-fluid" id="inputFormContainer">
 			<div class="container">
 				<div class="col-xs-12" id="inputFormDiv">
 					<h2>WHERE WOULD YOU LIKE TO GO?</h2>
-					<!-- FORM TO BE COMPLETED BY KEISSY-->
-					<p> Keissy, please complete the form right here inside this div</p>
+					<hr>
+					<!-- FORM -->
+						<form>
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="form-group">
+									<label for="travelerName">Your Name</label>
+									<input type="text" class="form-control" id="travelerName" placeholder="Name">
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="form-group">
+									<label for="numberTravelers">How Many Passengers Total</label>
+									<input type="text" class="form-control" id="numberTravelers" placeholder="Passengers">
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="form-group">
+									<label for="startingPoint">Starting Point</label>
+									<input type="text" class="form-control" id="startingPoint" placeholder="Starting Point">
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="form-group">
+									<label for="destination">Destination</label>
+									<input type="text" class="form-control" id="destination" placeholder="Destination">
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="form-group">
+									<label for="arrivalDate">Arrival Date</label>
+									<input type="text" class="form-control" id="arrivalDate" placeholder="MM-DD-YYYY">
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+									<div class="form-group">
+									<label for="tripDuration">Trip Duration (# of Days)</label>
+									<input type="text" class="form-control" id="tripDuration" placeholder="##">
+									</div>
+								</div>
+							</div>
+							<div class="text-center">
+								<button type="submit" class="btn btn-default">Submit</button>
+							</div>
+
+						</form>
 				</div>
 			</div>
 		</div>
 	<!--End Section 1: User input form-->
 
+
 </div> 	<!-- I had to remove the map from inside this div FOR NOW for the map to work,
 		but EVERYTHING should be inside this div -->
+
 
 	<!-- Begin Section 2: Map Results TO BE COMPLETED BY RAJ-->
 	    <!-- Google map direrction service API display -->
@@ -107,55 +160,73 @@
 	    <!-- Google map directions service API display end -->
 	<!--End Section 2: Map Results -->
 
+
 	<!--Begin Section 3: Weather and Recommendations results-->
-	<div class="col-xs-12" id="wrResultsDiv">
-		<!--Weather Results TO BE COMPLETED BY RYAN-->
-		<div class="col-xs-6" id="weatherResultsDiv">
-			<p>Ryan, please add the results from the weather API inside this div right here</p>
-		</div>
+	<div class="container-fluid" id="wrResultsDiv">
+		<div class="container">
+			<!--Weather Results TO BE COMPLETED BY RYAN-->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="weatherResultsDiv">
+				<p>Ryan, please add the results from the weather API inside this div right here</p>
+			</div>
 
-		<!--Recommendations TO BE COMPLETED BY MELISSA-->
-		<div class="col-xs-6" id="recommendationsDiv">
-			<p>Melissa, please add the recommendations based on weather inside this div right here</p>
-		</div>
+			<!--Recommendations TO BE COMPLETED BY MELISSA-->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="recommendationsDiv">
+				<p>Melissa, please add the recommendations based on weather inside this div right here</p>
+			</div>
 
+		</div>
 	</div>
 	<!--End Section 3: Weather and Recommendations results-->
 
+
 	<!--Begin Section 4: Past Adventures TO BE COMPLETED BY KEISSY-->
-	<div class="col-xs-12" id="pastAdventuresDiv">
-		<h3>PAST ADVENTURES</h3>
-				<!-- TABLE -->
-					<div class="table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Traveler</th>
-									<th>Starting Point</th>
-									<th>Destination</th>
-									<th>Arrival Date</th>
-									<th>Duration</th>
-									<th>Number of Travelers</th>
-								</tr>
-							</thead>
+	<div class="container-fluid" id="pastAdventuresDiv">
+		<div class="container">
+			<h3>PAST ADVENTURERS</h3>
+			<hr>
+					<!-- TABLE -->
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Traveler</th>
+										<th>Starting Point</th>
+										<th>Destination</th>
+										<th>Arrival Date</th>
+										<th>Duration</th>
+										<th>Number of Travelers</th>
+									</tr>
+								</thead>
 
-							<tbody>
-								<tr>
-								  <td>Louise Sawyer</td>
-								  <td>Little Rock, Arkansas</td>
-								  <td>Mexico</td>
-								  <td>05-24-1991</td>
-								  <td>1 Week</td>
-								  <td>2</td>
-								</tr>
-							</tbody>
+								<tbody>
+									<tr>
+									  <td>Louise Sawyer</td>
+									  <td>Little Rock, Arkansas</td>
+									  <td>Mexico</td>
+									  <td>05-24-1991</td>
+									  <td>1 Week</td>
+									  <td>2</td>
+									</tr>
+								</tbody>
 
-						</table>
-					</div>
-	<p>Keissy, please add the 'past road trips' from firebase database ito this table</p>
+							</table>
+						</div>
+						<p>Keissy, please add the "past road trips" from firebase database into this table</p>
+		</div>
 	</div>
 
 	<!--End Section 4: Past Adventures-->
+
+
+	<!--Begin Section 5: RESET BUTTON-->
+	<div class="container-fluid" id="resetButton">
+		<div class="container">
+		<button>PLAN ANOTHER ADVENTURE</button>
+		</div>
+	</div>
+
+	<!--End Section 5: RESET BUTTON-->
+
 
 	<!--Footer-->
 	<footer class="footer">
@@ -165,6 +236,9 @@
     </footer>
 
 <!--End Page Content-->
+
+
+
 
 <!-- These 2 script tags need to be in HTML per googlemaps API.
 Cannot be moved to seperate .js file due to API restrictions. -->

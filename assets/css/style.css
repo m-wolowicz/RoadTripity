@@ -17,6 +17,8 @@ body {
 	padding-right: 0px;
 }
 
+
+
 /*JUMBOTRON*/
 .jumbotron {
     background-image: url("../images/background.jpg");
@@ -40,6 +42,8 @@ body {
     font-weight: 400;
 }
 
+
+
 /* FORM SECTION */
 #inputFormContainer {
 	background-color: #3fb0ac;
@@ -57,12 +61,22 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 	margin-top: 0px;
+	text-align: center;
+}
+
+#inputFormDiv hr {
+	width: 200px;
+	background-color: #fae596;
+	height: 2px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 #inputFormDiv label {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 400;
 	font-size: 15px;
+	text-align: left;
 }
 
 #inputFormDiv input {
@@ -83,13 +97,15 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 	border: none;
-	margin-top: 30px;
+	margin-top: 15px;
 }
 
 #inputFormDiv button:hover {
 	background-color: #173e43;
 	color: #fae596;
 }
+
+
 
 /* CSS FOR GOOGLE MAPS API */
 /* Always set the map height explicitly to define the size of the div
@@ -163,6 +179,8 @@ html, body {
   }
 }
 
+
+
 /* Weather and Recommendations Div and Container */
 #wrResultsDiv {
 	background-color: #173e43;
@@ -170,16 +188,73 @@ html, body {
 
  #weatherResultsDiv {
 	 color: #fae596;
+	 padding: 30px;
  }
  #recommendationsDiv {
 	 color: #dddfd4;
+	 padding: 30px;
  }
+
+
 
  /* Past Adventures Div and Container */
 #pastAdventuresDiv {
 	background-color: #3fb0ac;
 	color: white;
+	padding-bottom: 30px;
 }
+
+#pastAdventuresDiv h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 30px;
+	letter-spacing: 1px;
+}
+
+#pastAdventuresDiv hr {
+	width: 200px;
+	background-color: #fae596;
+	height: 2px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#pastAdventuresDiv th {
+	color: #173e43;
+}
+
+
+/* RESET BUTTON */
+#resetButton {
+	background-image: url("../images/resetBackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+	margin-bottom: 60px;
+	padding: 30px;
+	text-align: center;
+}
+
+#resetButton button {
+	font-family: 'Righteous', cursive;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	background-color: #fae596;
+	color: #3fb0ac;
+	padding: 15px 30px;
+	border: none;
+	margin: 5% 0;
+}
+
+#resetButton button:hover {
+	background-color: #3fb0ac;
+	color: #fae596;
+}
+
+
 
 /* footer */
 .footer {
