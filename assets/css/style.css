@@ -7,9 +7,9 @@ html {
 }
 
 body {
-    background-color: #dddfd4;
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 60px;
+  background-color: #dddfd4;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 60px;
 }
 
 #pageContainer {
@@ -58,25 +58,26 @@ body {
 }
 
 #inputFormDiv h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  margin-top: 0px;
-  text-align: center;
+
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin-top: 0px;
+	text-align: center;
 }
 
 #inputFormDiv hr {
-  width: 200px;
-  background-color: #fae596;
-  height: 2px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+	width: 200px;
+	background-color: #fae596;
+	height: 2px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 #inputFormDiv label {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  text-align: left;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	text-align: left;
 }
 
 #inputFormDiv input {
@@ -88,16 +89,16 @@ body {
 }
 
 #inputFormDiv button {
-  font-family: 'Righteous', cursive;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 20px;
-  background-color: #fae596;
-  color: #173e43;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: none;
-  margin-top: 15px;
+	font-family: 'Righteous', cursive;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	background-color: #fae596;
+	color: #173e43;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: none;
+	margin-top: 15px;
 }
 
 #inputFormDiv button:hover {
@@ -161,6 +162,7 @@ html, body {
     width: auto;
   }
 }
+
 .adp {
   max-width: 971px;
 }
@@ -169,96 +171,97 @@ html, body {
 
 /* Weather and Recommendations Div and Container */
 #wrResultsDiv {
-  background-color: #173e43;
+	background-color: #173e43;
  }
 
  #weatherResultsDiv {
-   color: #fae596;
-   padding: 30px;
+	 color: #fae596;
+	 padding: 30px;
  }
  #recommendationsDiv {
-   color: #dddfd4;
-   padding: 30px;
+	 color: #dddfd4;
+	 padding: 30px;
  }
 
 
 
  /* Past Adventures Div and Container */
 #pastAdventuresDiv {
-  background-color: #3fb0ac;
-  color: white;
-  padding-bottom: 30px;
+	background-color: #3fb0ac;
+	color: white;
+	padding-bottom: 30px;
 }
 
 #pastAdventuresDiv h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 30px;
-  letter-spacing: 1px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 30px;
+	letter-spacing: 1px;
 }
 
 #pastAdventuresDiv hr {
-  width: 200px;
-  background-color: #fae596;
-  height: 2px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+	width: 200px;
+	background-color: #fae596;
+	height: 2px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 #pastAdventuresDiv th {
-  color: #173e43;
+	color: #173e43;
 }
 
 
 /* RESET BUTTON */
 #resetButton {
-  background-image: url("../images/resetBackground.jpg");
+	background-image: url("../images/resetBackground.jpg");
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
     background-size: cover;
-  margin-bottom: 60px;
-  padding: 30px;
-  text-align: center;
+	margin-bottom: 60px;
+	padding: 30px;
+	text-align: center;
 }
 
 #resetButton button {
-  font-family: 'Righteous', cursive;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 20px;
-  background-color: #fae596;
-  color: #3fb0ac;
-  padding: 15px 30px;
-  border: none;
-  margin: 5% 0;
+	font-family: 'Righteous', cursive;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	background-color: #fae596;
+	color: #3fb0ac;
+	padding: 15px 30px;
+	border: none;
+	margin: 5% 0;
 }
 
 #resetButton button:hover {
-  background-color: #3fb0ac;
-  color: #fae596;
+	background-color: #3fb0ac;
+	color: #fae596;
 }
 
 
 
 /* footer */
 .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #173e43;
-  color: white;
-  text-align: center;
-  font-size: 75%;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: #173e43;
+	color: white;
+	text-align: center;
+	font-size: 75%;
 }
 
 #footer {
   display: table;
   height: 100%;
 }
+
 #footer p {
   display: table-cell;
   margin: 0;

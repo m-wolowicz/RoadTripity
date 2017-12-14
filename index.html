@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Linking Normalize.css -->
   <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
@@ -49,7 +49,6 @@
 <!--Begin Page Content-->
 
 <div class="container-fluid" id="pageContainer">
-
 
   <!--Begin Section 1: User input form-->
     <div class="container-fluid" id="inputFormContainer">
@@ -162,77 +161,78 @@
   <!--End Section 2: Map Results -->
 
 
-  <!--Begin Section 3: Weather and Recommendations results-->
-  <div class="container-fluid" id="wrResultsDiv">
-    <div class="container">
-      <!--Weather Results TO BE COMPLETED BY RYAN-->
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="weatherResultsDiv">
-        <p>Ryan, please add the results from the weather API inside this div right here</p>
-      </div>
+	<!--Begin Section 3: Weather and Recommendations results-->
+	<div class="container-fluid" id="wrResultsDiv">
+		<div class="container">
+			<!--Weather Results TO BE COMPLETED BY RYAN-->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="weatherResultsDiv">
+				<p>Ryan, please add the results from the weather API inside this div right here</p>
+			</div>
 
-      <!--Recommendations TO BE COMPLETED BY MELISSA-->
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="recommendationsDiv">
-        <p>Melissa, please add the recommendations based on weather inside this div right here</p>
-      </div>
+			<!--Recommendations TO BE COMPLETED BY MELISSA-->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="recommendationsDiv">
+				<p>Melissa, please add the recommendations based on weather inside this div right here</p>
+			</div>
 
-    </div>
-  </div>
-  <!--End Section 3: Weather and Recommendations results-->
-
-
-  <!--Begin Section 4: Past Adventures TO BE COMPLETED BY KEISSY-->
-  <div class="container-fluid" id="pastAdventuresDiv">
-    <div class="container">
-      <h3>PAST ADVENTURERS</h3>
-      <hr>
-          <!-- TABLE -->
-            <div class="table-responsive">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Traveler</th>
-                    <th>Starting Point</th>
-                    <th>Destination</th>
-                    <th>Arrival Date</th>
-                    <th>Duration</th>
-                    <th>Number of Travelers</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>Louise Sawyer</td>
-                    <td>Little Rock, Arkansas</td>
-                    <td>Mexico</td>
-                    <td>05-24-1991</td>
-                    <td>1 Week</td>
-                    <td>2</td>
-                  </tr>
-                </tbody>
-
-              </table>
-            </div>
-            <p>Keissy, please add the "past road trips" from firebase database into this table</p>
-    </div>
-  </div>
-
-  <!--End Section 4: Past Adventures-->
+		</div>
+	</div>
+	<!--End Section 3: Weather and Recommendations results-->
 
 
-  <!--Begin Section 5: RESET BUTTON-->
-  <div class="container-fluid" id="resetButton">
-    <div class="container">
-    <button>PLAN ANOTHER ADVENTURE</button>
-    </div>
-  </div>
+	<!--Begin Section 4: Past Adventures TO BE COMPLETED BY KEISSY-->
+	<div class="container-fluid" id="pastAdventuresDiv">
+		<div class="container">
+			<h3>PAST ADVENTURERS</h3>
+			<hr>
+					<!-- TABLE -->
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Traveler</th>
+										<th>Starting Point</th>
+										<th>Destination</th>
+										<th>Arrival Date</th>
+										<th>Duration</th>
+										<th>Number of Travelers</th>
+									</tr>
+								</thead>
 
-  <!--End Section 5: RESET BUTTON-->
+								<tbody>
+									<tr>
+									  <td>Louise Sawyer</td>
+									  <td>Little Rock, Arkansas</td>
+									  <td>Mexico</td>
+									  <td>05-24-1991</td>
+									  <td>1 Week</td>
+									  <td>2</td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+						<p>Keissy, please add the "past road trips" from firebase database into this table</p>
+		</div>
+	</div>
+
+	<!--End Section 4: Past Adventures-->
 
 
-  <!--Footer-->
-  <footer class="footer">
+	<!--Begin Section 5: RESET BUTTON-->
+	<div class="container-fluid" id="resetButton">
+		<div class="container">
+		<button>PLAN ANOTHER ADVENTURE</button>
+		</div>
+	</div>
+
+	<!--End Section 5: RESET BUTTON-->
+
+
+	<!--Footer-->
+	<footer class="footer">
       <div class="container"  id="footer">
-    <p>© 2017 Keissy Leonardo - Melissa Wolowicz - Rajat Narula - Ryan Moven.  All Rights Reserved.</p>
+		<p>© 2017 Keissy Leonardo - Melissa Wolowicz - Rajat Narula - Ryan Moven.  All Rights Reserved.</p>
+
       </div>
     </footer>
 
@@ -288,6 +288,7 @@ onChangeHandler();
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTGIHpFEDWOSxrj0u5EWP30GfzwyFbMR4&callback=initMap">
     </script>
+	</script>
 
   </body>
 </html>
