@@ -89,7 +89,7 @@ body {
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
-  height: 50%;
+  height: 40%;
   width: 60%;
 }
 /* Optional: Makes the sample page fill the window. */
@@ -129,7 +129,7 @@ html, body {
   font-size: 12px;
 }
 #right-panel {
-  height: 50%;
+  height: 40%;
   float: left;
   max-width: 390px;
   overflow: auto;
@@ -155,4 +155,28 @@ html, body {
     float: right;
     width: auto;
   }
+}
+
+/* Weather and Recommendations Div and Container */
+#wrResultsDiv {
+	background-color: #173e43;
+ }
+
+ #weatherResultsDiv {
+	 color: #fae596;
+ }
+ #recommendationsDiv {
+	 color: #dddfd4;
+ }
+
+ /* Past Adventures Div and Container */
+#pastAdventuresDiv {
+	background-color: #3fb0ac;
+	color: white;
+}
+
+/* footer */
+#footer {
+	background-color: black;
+	color: white;
 }
