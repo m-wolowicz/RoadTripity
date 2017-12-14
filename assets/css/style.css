@@ -1,9 +1,15 @@
 /*Creating our own CSS Style for the project*/
 
 /*Styles that apply to the entire page*/
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 body {
     background-color: #dddfd4;
 	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 60px;
 }
 
 #pageContainer {
@@ -176,7 +182,24 @@ html, body {
 }
 
 /* footer */
-#footer {
-	background-color: black;
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: #173e43;
 	color: white;
+	text-align: center;
+	font-size: 75%;
+}
+
+#footer {
+  display: table;
+  height: 100%;
+}
+#footer p {
+  display: table-cell;
+  margin: 0;
+  vertical-align: middle;
 }
