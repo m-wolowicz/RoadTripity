@@ -120,37 +120,7 @@
   <!-- Begin Section 2: Map Results TO BE COMPLETED BY RAJ-->
       <!-- Google map direrction service API display -->
         <div id="floating-panel">
-            <!-- <strong>Start:</strong>
-            <select id="start">
-              <option value="chicago, il">Chicago</option>
-              <option value="st louis, mo">St Louis</option>
-              <option value="joplin, mo">Joplin, MO</option>
-              <option value="oklahoma city, ok">Oklahoma City</option>
-              <option value="amarillo, tx">Amarillo</option>
-              <option value="gallup, nm">Gallup, NM</option>
-              <option value="flagstaff, az">Flagstaff, AZ</option>
-              <option value="winona, az">Winona</option>
-              <option value="kingman, az">Kingman</option>
-              <option value="barstow, ca">Barstow</option>
-              <option value="san bernardino, ca">San Bernardino</option>
-              <option value="los angeles, ca">Los Angeles</option>
-            </select> -->
-            <!-- <br> -->
-            <!-- <strong>End:</strong>
-            <select id="end">
-              <option value="chicago, il">Chicago</option>
-              <option value="st louis, mo">St Louis</option>
-              <option value="joplin, mo">Joplin, MO</option>
-              <option value="oklahoma city, ok">Oklahoma City</option>
-              <option value="amarillo, tx">Amarillo</option>
-              <option value="gallup, nm">Gallup, NM</option>
-              <option value="flagstaff, az">Flagstaff, AZ</option>
-              <option value="winona, az">Winona</option>
-              <option value="kingman, az">Kingman</option>
-              <option value="barstow, ca">Barstow</option>
-              <option value="san bernardino, ca">San Bernardino</option>
-              <option value="los angeles, ca">Los Angeles</option>
-            </select> -->
+            
           </div>
           <div id="right-panel">
         <h3>TRIP DATA</h3>
@@ -260,7 +230,7 @@ Cannot be moved to seperate .js file due to API restrictions. -->
           center: {lat: 41.85, lng: -87.65}
         });
         directionsDisplay.setMap(map);
-        directionsDisplay.setPanel(document.getElementById('right-panel'));
+        //directionsDisplay.setPanel(document.getElementById('right-panel'));
         var control = document.getElementById('floating-panel');
         control.style.display = 'block';
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
@@ -285,6 +255,13 @@ onChangeHandler();
         }, function(response, status) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
+           var distance = response.routes[0].legs[0].distance.text;
+           var duration = response.routes[0].legs[0].duration.text;
+           console.log(response.routes[0].legs[0].distance.text);
+            console.log(response.routes[0].legs[0].duration.text);
+
+            $("#right-panel").append("<strong>" + 'Distance to your destination: ' + distance + '<br>' + 'Duration of your travel: ' + duration + "</strong>");
+
           } else {
             window.alert('Directions request failed due to ' + status);
           }
