@@ -1,5 +1,6 @@
 
-
+$(document).ready(function() {
+  
 // Initializing Firebase 
   var config = {
     apiKey: "AIzaSyAcG4BqNXIOen6kziVMAtUmB21__n2e7JY",
@@ -74,6 +75,8 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 
 // On click statement that collects the users input data. 
 $('#submit').on('click', function(event){
+  event.preventDefault();
+  
  var name = $("#travelerName").val().trim();
  console.log(name);
    var travelersTotal = $("#numberTravelers").val().trim();
@@ -103,33 +106,51 @@ $("#resetButton").on("click", function(event) {
     });
 
 
-$(document).ready(function() {
-$('#end').on('click', function(){
+//$(document).ready(function() {
+$('#submit').on('click', function(event){
   
+  event.preventDefault();
+  
+  //getting destination google place info from input form
+  var cityRaw = $('#destination').val();
+
+  //splitting raw city information into an array of strings
+  var cityArr = cityRaw.split(',');
+
+  console.log(cityArr);
+
+  var stIndex = cityArr.length - 2
+  var ctIndex = cityArr.length - 3
+
+  var city = cityArr[ctIndex];
+  var st = cityArr[stIndex];
 
 // Ajax request based on user's destination value
-	var city = $('#end').val()
+	//var city = $('#destination').val()
     $.ajax({
-  url : "http://api.wunderground.com/api/4ca026adcc7248b3/geolookup/conditions/forecast/q/" + city + ".json",
+  url : "http://api.wunderground.com/api/4ca026adcc7248b3/geolookup/conditions/forecast10day/q/" + st + '/' + city + ".json",
   dataType : "jsonp",
   async: false,
   success : function(parsed_json) {
-  var condition = parsed_json.current_observation.icon
-
-  // Saving the current_observation.icon_url property
-        var imageUrl = parsed_json.current_observation.icon_url
-
-        // Creating and storing an image tag
-        var weatherImage = $("<img>");
-
-        // Setting the weatherImage src attribute to imageUrl
-        weatherImage.attr("src", imageUrl);
-        weatherImage.attr("alt", "Today's forecast");
-
-  $("#weatherResultsDiv").append("<p>" + "Current condition in " + city + "is:" + condition + "</p>");
+   console.log(parsed_json);
 
 
-  $("#weatherResultsDiv").append(weatherImage);
+  // var condition = parsed_json.current_observation.icon
+
+  // // Saving the current_observation.icon_url property
+  //       var imageUrl = parsed_json.current_observation.icon_url
+
+  //       // Creating and storing an image tag
+  //       var weatherImage = $("<img>");
+
+  //       // Setting the weatherImage src attribute to imageUrl
+  //       weatherImage.attr("src", imageUrl);
+  //       weatherImage.attr("alt", "Today's forecast");
+
+  // $("#weatherResultsDiv").append("<p>" + "Current condition in " + city + "is:" + condition + "</p>");
+
+
+  // $("#weatherResultsDiv").append(weatherImage);
   }
   		}); // end of Ajax call
 

@@ -25,7 +25,7 @@
 
     <!-- Linking Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous" rel="stylesheet">
-
+    <script type="text/javascript" src="assets/javascript/script.js"></script>
     <!-- Linking Google Firebase Database -->
       <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
 
@@ -111,68 +111,27 @@
         </div>
       </div>
     </div>
-  <!--End Section 1: User input form-->
+ 
 
 
-</div>  <!-- I had to remove the map from inside this div FOR NOW for the map to work,
+</div> 
+
+ <!--End Section 1: User input form--> 
+ <!-- I had to remove the map from inside this div FOR NOW for the map to work,
     but EVERYTHING should be inside this div -->
 
 
-  <!-- Begin Section 2: Map Results TO BE COMPLETED BY RAJ-->
-      <!-- Google map direrction service API display -->
-        <div id="floating-panel">
-            
-
-          </div>
-        </div>
-      </div>
-    <!--End Section 1: User input form-->
-
-
-  </div>  <!-- I had to remove the map from inside this div FOR NOW for the map to work,
-      but EVERYTHING should be inside this div -->
-
-
-    <!-- Begin Section 2: Map Results TO BE COMPLETED BY RAJ-->
-        <!-- Google map direrction service API display -->
+  
+       
           <div id="floating-panel">
-              <!-- <strong>Start:</strong>
-              <select id="start">
-                <option value="chicago, il">Chicago</option>
-                <option value="st louis, mo">St Louis</option>
-                <option value="joplin, mo">Joplin, MO</option>
-                <option value="oklahoma city, ok">Oklahoma City</option>
-                <option value="amarillo, tx">Amarillo</option>
-                <option value="gallup, nm">Gallup, NM</option>
-                <option value="flagstaff, az">Flagstaff, AZ</option>
-                <option value="winona, az">Winona</option>
-                <option value="kingman, az">Kingman</option>
-                <option value="barstow, ca">Barstow</option>
-                <option value="san bernardino, ca">San Bernardino</option>
-                <option value="los angeles, ca">Los Angeles</option>
-              </select> -->
-              <!-- <br> -->
-              <!-- <strong>End:</strong>
-              <select id="end">
-                <option value="chicago, il">Chicago</option>
-                <option value="st louis, mo">St Louis</option>
-                <option value="joplin, mo">Joplin, MO</option>
-                <option value="oklahoma city, ok">Oklahoma City</option>
-                <option value="amarillo, tx">Amarillo</option>
-                <option value="gallup, nm">Gallup, NM</option>
-                <option value="flagstaff, az">Flagstaff, AZ</option>
-                <option value="winona, az">Winona</option>
-                <option value="kingman, az">Kingman</option>
-                <option value="barstow, ca">Barstow</option>
-                <option value="san bernardino, ca">San Bernardino</option>
-                <option value="los angeles, ca">Los Angeles</option>
-              </select> -->
+             
             </div>
             <div id="right-panel">
           <h3>TRIP DATA</h3>
         </div>
         <!-- <button id="submit">submit</button>  -->
             <div id="map"></div>
+         
         <!-- Google map directions service API display end -->
     <!--End Section 2: Map Results -->
 
@@ -250,63 +209,13 @@
 
 
 
-  <!-- These 2 script tags need to be in HTML per googlemaps API.
-  Cannot be moved to seperate .js file due to API restrictions. -->
-      <script>
-        
-        function initMap() {
-          var directionsDisplay = new google.maps.DirectionsRenderer;
-          var directionsService = new google.maps.DirectionsService;
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: {lat: 41.85, lng: -87.65}
-          });
-          directionsDisplay.setMap(map);
-          directionsDisplay.setPanel(document.getElementById('right-panel'));
-          var control = document.getElementById('floating-panel');
-          control.style.display = 'block';
-          map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-          var onChangeHandler = function() {
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
-          };
-         // document.getElementById('submit').addEventListener('click', onChangeHandler);
-          $("#submit").on('click', function(event) {
-  event.preventDefault();
-  onChangeHandler();
-
-          })
-          //document.getElementById('end').addEventListener('change', onChangeHandler);
-        }
-        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-          var start = document.getElementById('startingPoint').value;
-          var end = document.getElementById('destination').value;
-          directionsService.route({
-            origin: start,
-            destination: end,
-            travelMode: 'DRIVING'
-          }, function(response, status) {
-            if (status === 'OK') {
-              directionsDisplay.setDirections(response);
-            } else {
-              window.alert('Directions request failed due to ' + status);
-            }
-          });
-        }
-      </script>
-
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTGIHpFEDWOSxrj0u5EWP30GfzwyFbMR4&callback=initMap">
-      </script>
-      
-  	</script>
-    <script type="text/javascript" src="assets/javascript/script.js"></script>
-
-    </body>
-
+  
 
 <!-- These 2 script tags need to be in HTML per googlemaps API.
 Cannot be moved to seperate .js file due to API restrictions. -->
     <script>
+      // 
+      
       
       function initMap() {
         var directionsDisplay = new google.maps.DirectionsRenderer;
