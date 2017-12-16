@@ -1,8 +1,11 @@
 //IMPORTANT!
 $(document).ready(function() {
 
+  var content;
+
 // INITIALIZING FIREBASE
 // ================
+
 
   var config = {
     apiKey: "AIzaSyAcG4BqNXIOen6kziVMAtUmB21__n2e7JY",
@@ -21,67 +24,111 @@ var database = firebase.database();
 
 database.ref("/adventures").on("child_added", function(snapshot) {
 
-// Variables for the past adventures table
-   var name = snapshot.val().name;
-   var travelersTotal = snapshot.val().travelersTotal;
-   var startingPoint = snapshot.val().startingPoint;
-   var destination = snapshot.val().destination;
-   var arrivalDate = snapshot.val().arrivalDate;
-   var tripDuration = snapshot.val().tripDuration;
-   var tableRow = $("<tr>");
-   var tableDisplay = $("<td>");
+   
+    var cityRaw = snapshot.val().destination;
 
-// Displays on the past adventures the travelers name.
+     //splitting raw city information into an array of strings
+     var cityArr = cityRaw.split(",");
+     var stIndex = cityArr.length - 2;
+     var ctIndex = cityArr.length - 3;
+
+     var city = cityArr[ctIndex];
+     var st = cityArr[stIndex];
+// Variables for the past adventures table 
+    content =  { 
+         name: snapshot.val().name, 
+         travelersTotal: snapshot.val().travelersTotal, 
+         startingPoint: city+ ", "+st,  
+         destination: city+ ", "+st,
+         arrivalDate: snapshot.val().arrivalDate, 
+         tripDuration: snapshot.val().tripDuration, 
+
+         }
+
+  console.log(content);
+   displayTable(content);
+   },  function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+  })
+
+
+
+
+
+
+// On click statement that collects the users input data. 
+$('#submit').on('click', function(event){
+  event.preventDefault();
+  // Variables for the past adventures table 
+
+    name = $("#travelerName").val().trim();
+    travelersTotal = $("#numberTravelers").val().trim();
+    startingPoint = $("#startingPoint").val().trim(); 
+    destination = $("#destination").val().trim(); 
+
+
+    arrivalDate = $("#arrivalDate").val().trim(); 
+    tripDuration = $("#tripDuration").val().trim();    
+    tableRow = $("<tr>");
+
+
+displayTable();
+}); 
+
+
+var displayTable = function(content){
+
+   var tableDisplay = $("<td>");
+   var tableRow = $("<tr>");
+// Displays on the past adventures the travelers name.  
+
 
   tableRow.append(tableDisplay);
-  tableDisplay.text(name);
+  tableDisplay.text(content.name);
 
-  // displays on the past adventures the starting point
-  var tableDisplay3 = $("<td>");
-  tableRow.append(tableDisplay3);
-  tableDisplay3.text(startingPoint);
 
-// displays on the past adventures the destination
-  var tableDisplay4 = $("<td>");
-  tableRow.append(tableDisplay4);
-  tableDisplay4.text(destination);
+  // displays on the past adventures the starting point 
+  var tableDisplay3 = $("<td>"); 
+  tableRow.append(tableDisplay3); 
+  tableDisplay3.text(content.startingPoint);
 
-  // displays on the past adventures the arrival date
-  var tableDisplay5 = $("<td>");
-  tableRow.append(tableDisplay5);
-  tableDisplay5.text(arrivalDate);
+// displays on the past adventures the destination 
+  var tableDisplay4 = $("<td>"); 
+  tableRow.append(tableDisplay4); 
+  tableDisplay4.text(content.destination);
+
+  // displays on the past adventures the arrival date 
+  var tableDisplay5 = $("<td>"); 
+  tableRow.append(tableDisplay5); 
+  tableDisplay5.text(content.arrivalDate);  
+
 
 // displays on the past adventures the trip duration
   var tableDisplay6 = $("<td>");
   tableRow.append(tableDisplay6);
-  tableDisplay6.text(tripDuration);
+  tableDisplay6.text(content.tripDuration);
 
   // Displays on the past adventures the total travelers.
   var tableDisplay2 = $("<td>");
   tableRow.append(tableDisplay2);
-  tableDisplay2.text(travelersTotal);
+
+  tableDisplay2.text(content.travelersTotal); 
+
+// Displays button 
+  var removeButton= $("<button id='Yomama'><p>Remove<p></button>");
+  tableRow.append(removeButton);
+
+// displays on the past adventures the table row 
+ $("tbody").append(tableRow); 
 
 
-// displays on the past adventures the table row
- $("tbody").append(tableRow);
- },
 
-// Part of the firebase
-  function(errorObject) {
-    console.log("The read failed: " + errorObject.code);
-  });
+          // database.ref("/adventures").push(content);
 
-// On click statement that collects the users input data.
-$('#submit').on('click', function(event){
-  event.preventDefault();
+// Lines that push data to the databse. 
 
- var name = $("#travelerName").val().trim();
- console.log(name);
-   var travelersTotal = $("#numberTravelers").val().trim();
-   var startingPoint = $("#startingPoint").val().trim();
-   var destination = $("#destination").val().trim();
-   var arrivalDate = $("#arrivalDate").val().trim();
-   var tripDuration = $("#tripDuration").val().trim();
+
+}
 
 
 // Lines that push data to the databse.
@@ -92,8 +139,6 @@ $('#submit').on('click', function(event){
          destination: destination,
          arrivalDate: arrivalDate,
          tripDuration: tripDuration
-
-        });
 
 });
 
@@ -467,7 +512,7 @@ $("#txtFDay3").append(thirdDayForecast);
 
 
 
-
+ 
 	}); // end of onclick
 
 }); // end of document.ready
