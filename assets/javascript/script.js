@@ -121,7 +121,7 @@ function weatherRecommendations() {
   		var userInputDestination = st + '/' + city;
 
   		//Create a new variable for the WEATHER API query URL search
-  		var queryURL = "http://api.wunderground.com/api/4ca026adcc7248b3/geolookup/conditions/forecast/q/" + userInputDestination + ".json";
+  		var queryURL = "https://api.wunderground.com/api/4ca026adcc7248b3/geolookup/conditions/forecast/q/" + userInputDestination + ".json";
 
   		//AJAX
   		$.ajax({
