@@ -1,351 +1,329 @@
-  <!-- Group Project : Road Trip Assistant with directions, weather and trip recommendations. -->
+<!-- Group Project : Road Trip Assistant with directions, weather and trip recommendations. -->
 
-  <!DOCTYPE html>
-  <html lang="en-US">
-  <head>
-  	<meta charset="utf-8">
-  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Linking Normalize.css -->
-    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+	<!-- Linking Normalize.css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
 
-    <!-- Setting the Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Setting the Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Linking jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- Linking jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-    <!-- BOOTSTRAP 3: Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- BOOTSTRAP 3: Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Linking our own CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Linking our own CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <!-- CDNs neede for bootbox alerts-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js" integrity="sha256-ZQwUJQVoHXhCr4uesYLDjsWxF8MybHrga5PLtL5BcqI=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+	<!-- CDNs neede for bootbox alerts-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js" integrity="sha256-ZQwUJQVoHXhCr4uesYLDjsWxF8MybHrga5PLtL5BcqI=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
-    <!-- Linking Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous" rel="stylesheet">
-    
-    <!-- Linking our own JAVASCRIPT -->
-    <script type="text/javascript" src="assets/javascript/script.js"></script>
-    
-    <!-- Linking Google Firebase Database -->
-      <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+	<!-- Linking Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous" rel="stylesheet">
 
+	<!-- Linking our own JAVASCRIPT -->
+	<script src="assets/javascript/script.js"></script>
 
-    <title>RoadTripity: Plan Your Next Road Trip</title>
+	<!-- Linking Google Firebase Database -->
+	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
 
-  </head>
-  <body>
+	<title>RoadTripity: Plan Your Next Road Trip</title>
 
-  <!-- BEGIN HTML PAGE CONTENT -->
+</head>
+<body>
+<!-- BEGIN HTML PAGE CONTENT -->
 
-  <!-- JUMBOTRON -->
-  <div class="jumbotron">
-    <div class="container">
-      <h1>RoadTripity!</h1>
-      <p>Plan your next road trip with the help of RoadTripity. To begin, simply enter the address of the begining of your journey and the address for your final destination.</p>
-    </div>
-  </div>
-  <!-- End Jumbotron -->
+<!-- JUMBOTRON -->
+<div class="jumbotron">
+	<div class="container">
+		<h1>RoadTripity!</h1>
+		<p>Plan your next road trip with the help of RoadTripity. To begin, simply enter the address of the begining of your journey and the address for your final destination.</p>
+	</div>
+</div>
+<!-- End Jumbotron -->
 
-  <!--Begin Page Content-->
+<!--Begin Page Content-->
 
-  <div class="container-fluid" id="pageContainer">
+<div class="container-fluid" id="pageContainer">
 
-    <!--Begin Section 1: User input form-->
-      <div class="container-fluid" id="inputFormContainer">
-        <div class="container">
-          <div class="col-xs-12" id="inputFormDiv">
-            <h2>WHERE WOULD YOU LIKE TO GO?</h2>
-            <hr>
-            <!-- FORM -->
-              <form>
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="form-group">
-                    <label for="travelerName">Your Name</label>
-                    <input type="text" class="form-control" id="travelerName" placeholder="Name">
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="form-group">
-                    <label for="numberTravelers">How Many Passengers Total</label>
+	<!--Begin Section 1: User input form-->
+	<div class="container-fluid" id="inputFormContainer">
+		<div class="container">
+		<div class="col-xs-12" id="inputFormDiv">
+			<h2>WHERE WOULD YOU LIKE TO GO?</h2>
+			<hr>
+			<!-- FORM -->
+			<form>
+				<!-- First Row -->
+				<div class="row">
+					<!-- Name Field -->
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="form-group">
+							<label for="travelerName">Your Name</label>
+							<input type="text" class="form-control" id="travelerName" placeholder="Name">
+						</div>
+					</div>
+					<!-- Number of Passengers Field -->
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="form-group">
+							<label for="numberTravelers">How Many Passengers Total</label>
+							<input type="number" min=1 oninput="validity.valid||(value='');" class="form-control" id="numberTravelers" placeholder="Passengers">
+						</div>
+					</div>
+				</div>
 
-                    <input type="number" min=1 oninput="validity.valid||(value='');" class="form-control" id="numberTravelers" placeholder="Passengers">
-                    </div>
-                  </div>
-                </div>
+				<!-- Second Row -->
+				<div class="row">
+					<!-- Point A Field -->
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="form-group">
+							<label for="startingPoint">Starting Point</label>
+							<input type="text" class="form-control" id="startingPoint" placeholder="Starting Point">
+						</div>
+					</div>
+					<!-- Point B Field -->
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="form-group">
+							<label for="destination">Destination</label>
+							<input type="text" class="form-control" id="destination" placeholder="Destination">
+						</div>
+					</div>
+				</div>
 
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="form-group">
-                    <label for="startingPoint">Starting Point</label>
-                    <input type="text" class="form-control" id="startingPoint" placeholder="Starting Point">
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="form-group">
-                    <label for="destination">Destination</label>
-                    <input type="text" class="form-control" id="destination" placeholder="Destination">
-                    </div>
-                  </div>
-                </div>
+				<!-- Third Row -->
+				<div class="row">
+					<!-- Arrival Date Field -->
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="form-group">
+							<label for="arrivalDate">Arrival Date</label>
+							<input type="date" class="form-control" id="arrivalDate" placeholder="MM-DD-YYYY">
+						</div>
+					</div>
+					<!-- Stay Duration Field -->
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="form-group">
+							<label for="tripDuration">How many days are you staying there?</label>
+							<input type="number" min=1 oninput="validity.valid||(value='');" class="form-control" id="tripDuration" placeholder="##">
+						</div>
+					</div>
+				</div>
 
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="form-group">
-                    <label for="arrivalDate">Arrival Date</label>
+				<!-- BUTTON -->
+				<div class="text-center">
+				  <button id="submit" class="btn btn-default">Submit</button>
+				</div>
+			</form>
+		</div>
+		</div>
+	</div>
+	<!--End Section 1: User input form-->
 
-                    <input type="date" class="form-control" id="arrivalDate" placeholder="MM-DD-YYYY">
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                    <div class="form-group">
-                    <label for="tripDuration">Trip Duration (# of Days)</label>
+</div> <!-- This is the PAGE CONTAINER closing tag -->
 
-                    <input type="number" min=1 oninput="validity.valid||(value='');" class="form-control" id="tripDuration" placeholder="##">
-
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button id="submit" class="btn btn-default">Submit</button>
-                </div>
-
-
-            </form>
-        </div>
-      </div>
-    </div>
-</div> 
-
- <!--End Section 1: User input form--> 
- <!-- I had to remove the map from inside this div FOR NOW for the map to work,
-    but EVERYTHING should be inside this div -->
-
-
-  
-       
-          <div id="floating-panel">
-             
-            </div>
-            <div id="right-panel">
-          <h3>TRIP DATA</h3>
-        </div>
-        <!-- <button id="submit">submit</button>  -->
-            <div id="map"></div>
-         
-        <!-- Google map directions service API display end -->
-    <!--End Section 2: Map Results -->
+<!-- I had to remove the map from the page container above for it work.
+We should still see how to solve this -->
 
 
-  	<!--Begin Section 3: Weather and Recommendations results-->
-  	<div class="container-fluid" id="wrResultsDiv">
-  		<div class="container">
-  			<!--Weather Results TO BE COMPLETED BY RYAN-->
-  			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="weatherResultsDiv">
-  				<p> <!--Ryan, please add the results from the weather API inside this div right here --></p>
-
-  <div class="container"> <!-- beginning of container -->
-  <div class="row">  <!-- beginning of the first of two rows -->
-    <div class="col-sm-4" id="currentConditionImg">
-       <!-- IMAGE OF THE CONDITION IN CHICAGO GOES HERE -->
-    </div>
-    <div class="col-sm-8" id="currentConditionTxt">
-      <!-- TEXT OF THE CURRENT CONDITION GOES HERE -->
-    </div>
-  </div> <!-- END OF FIRST ROW -->
-  <div class="row" id= "3DayForecast">
-
-    <div class="col"> <!-- First forecast columb -->
-      <div class= "row">
-        <div class = "col-sm-12" id= "imgFDay1">
-    <!-- IMAGES FORCASTDAY1 -->
-        </div>
-        <div class = "col-sm-12" id="txtFDay1">
-        <!--  WEATHER FORCAST TEXT FOR DAY 1 -->
-        </div>
-  </div> <!-- end of first col row -->
-    </div> <!-- end of first forecast oolumb -->
-    <div class="col"> <!-- second forcast columb -->
-       <div class= "row">
-        <div class = "col-sm-12" id="imgFDay2">
-   <!-- IMAGES FORCASTDAY2 -->
-        </div>
-        <div class = "col-sm-12" id="txtFDay2">
-      <!-- WEATHER FORCAST TEXT FOR DAY 2 -->
-        </div>
-    </div> <!-- end of first col row -->
-    <div class="col"> <!-- third forecast columb -->
-       <div class= "row">
-        <div class = "col-sm-12" id= "imgFDay3">
-   <!--   IMAGES FORCASTDAY3 -->
-        </div>
-        <div class = "col-sm-12" id="txtFDay3">
-    <!--        WEATHER FORCAST TEXT FOR DAY 3 -->
-        </div>
-   
-    </div> <!-- end of third columb -->
-  </div> <!-- end of second row -->
-</div> <!-- end of Ryan's Weather container -->
+	<!--Begin Section 2: MAP and Trip Data-->
+	<div id="floating-panel"></div>
+	<div class="container-fluid" id="mapTripDataDiv">
+		<!-- MAP -->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="map-container">
+				<div id="map"></div>
+			</div>
+		<!-- Trip Data -->
+		<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<div class="" id="right-panel">
+				<h3>TRIP DATA</h3>
+				<hr>
+			</div>
+		</div>
+	</div>
+	
+	<!--End Section 2: Map Results -->
 
 
+	<!--Begin Section 3: Weather and Recommendations results-->
+	<div class="container-fluid" id="wrResultsDiv">
+		<div class="container">
+
+			<!--Weather Results BY RYAN-->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="weatherResultsDiv">
+
+				<!-- FIRST ROW -->
+				<div class="row">  
+					<div class="col-sm-4" id="currentConditionImg">
+					<!-- IMAGE OF THE CURRENT CONDITION GOES HERE -->
+					</div>
+					<div class="col-sm-8" id="currentConditionTxt">
+					<!-- TEXT OF THE CURRENT CONDITION GOES HERE -->
+					</div>
+				</div> <!-- END OF FIRST ROW -->
+
+				<!-- SECOND ROW -->
+				<div class="row" id= "3DayForecast">
+					<!-- First forecast Column-->
+					<div class = "col-sm-4">
+						<div id= "imgFDay1">
+						<!-- IMAGES FORCAST DAY 1 -->
+						</div>
+						<div id="txtFDay1">
+						<!--  WEATHER FORCAST TEXT FOR DAY 1 -->
+						</div>
+					</div>
+
+					<!-- Second forecast Column-->
+					<div class = "col-sm-4">
+						<div id= "imgFDay2">
+						<!-- IMAGES FORCAST DAY 2 -->
+						</div>
+						<div id="txtFDay2">
+						<!--  WEATHER FORCAST TEXT FOR DAY 2 -->
+						</div>
+					</div>
+
+					<!-- Third forecast Column-->
+					<div class = "col-sm-4">
+						<div id= "imgFDay3">
+						<!-- IMAGES FORCAST DAY 3 -->
+						</div>
+						<div id="txtFDay3">
+						<!--  WEATHER FORCAST TEXT FOR DAY 3 -->
+						</div>
+					</div>
+				</div> <!-- END OF SECOND ROW -->
+			</div> <!-- END OF WEATHER RESULTS BY RYAN -->
 
 
+			<!--Recommendations TO BE COMPLETED BY MELISSA-->
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="recommendationsDiv">
+				<h3>ROAD TIP:</h3>
+				<div id="roadTipText">
+				</div>
+			</div><!--END OF Recommendations BY MELISSA-->
+
+		</div>
+	</div>
+	<!--End Section 3: Weather and Recommendations results-->
 
 
-  			</div>
-
-  			<!--Recommendations TO BE COMPLETED BY MELISSA-->
-  			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="recommendationsDiv">
-          <h3>ROAD TIP:</h3>
-          <div id="roadTipText">
-          </div>
-
-
-  		</div>
-  	</div>
-  	<!--End Section 3: Weather and Recommendations results-->
-
-
-  	<!--Begin Section 4: Past Adventures TO BE COMPLETED BY KEISSY-->
-  	<div class="container-fluid" id="pastAdventuresDiv">
-  		<div class="container">
-  			<h3>PAST ADVENTURERS</h3>
-  			<hr>
-  					<!-- TABLE -->
-  						<div class="table-responsive">
-  							<table class="table">
-  								<thead>
-  									<tr>
-  										<th class="nameHead">Traveler</th>
-  										<th class="startHead">Starting Point</th>
-  										<th class="destinationHead">Destination</th>
-  										<th class="arrivalHead">Arrival Date</th>
-  										<th class="durationHead">Duration</th>
-  										<th class="travelersHead">Number of Travelers</th>
-                      <th class="removeHead">Remove Adventure</th>
-  									</tr>
-  								</thead>
-
-  								<tbody>
-  									
-  								</tbody>
-
-  							</table>
-
-        </div>
-
-  		</div>
-  	</div>
-
-  	<!--End Section 4: Past Adventures-->
+	<!--Begin Section 4: Past Adventures TO BE COMPLETED BY KEISSY-->
+	<div class="container-fluid" id="pastAdventuresDiv">
+		<div class="container">
+			<h3>PAST ADVENTURERS</h3>
+			<hr>
+			<!-- TABLE -->
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="nameHead">Traveler</th>
+  						<th class="startHead">Starting Point</th>
+  						<th class="destinationHead">Destination</th>
+  						<th class="arrivalHead">Arrival Date</th>
+  						<th class="durationHead">Duration</th>
+  						<th class="travelersHead">Number of Travelers</th>
+              <th class="removeHead">Remove Adventure</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--End Section 4: Past Adventures-->
 
 
-  	<!--Begin Section 5: RESET BUTTON-->
-  	<div class="container-fluid" id="resetButton">
-  		<div class="container">
-  		<button>PLAN ANOTHER ADVENTURE</button>
-  		</div>
-  	</div>
-
-  	<!--End Section 5: RESET BUTTON-->
-
-
-  	<!--Footer-->
-  	<footer class="footer">
-        <div class="container"  id="footer">
-  		<p>© 2017 Keissy Leonardo - Melissa Wolowicz - Rajat Narula - Ryan Moven.  All Rights Reserved.</p>
-
-        </div>
-      </footer>
-
-  <!--End Page Content-->
+	<!--Begin Section 5: RESET BUTTON-->
+	<div class="container-fluid" id="resetButton">
+		<div class="container">
+			<button>PLAN ANOTHER ADVENTURE</button>
+		</div>
+	</div>
+	<!--End Section 5: RESET BUTTON-->
 
 
+	<!--Footer-->
+	<footer class="footer">
+		<div class="container"  id="footer">
+		<p>© 2017 Keissy Leonardo - Melissa Wolowicz - Rajat Narula - Ryan Moven.  All Rights Reserved.</p>
 
+		</div>
+	</footer>
+	<!--  End Footer -->
+<!--End Page Content-->
 
-  
 
 <!-- These 2 script tags need to be in HTML per googlemaps API.
 Cannot be moved to seperate .js file due to API restrictions. -->
-    <script>
+<script>
+function initMap() {
+	var directionsDisplay = new google.maps.DirectionsRenderer;
+	var directionsService = new google.maps.DirectionsService;
 
-    
-      var directionsService;
-       var directionsDisplay;
+	var inputOne = document.getElementById('startingPoint');
+	var inputTwo = document.getElementById('destination');
+	var searchBoxOne = new google.maps.places.SearchBox(inputOne);
+	var searchBoxTwo = new google.maps.places.SearchBox(inputTwo);
+	var map = new google.maps.Map(document.getElementById('map'), {
+	  zoom: 4,
+	  center: {lat: 41.85, lng: -87.65}
+	});
+	directionsDisplay.setMap(map);
+	//directionsDisplay.setPanel(document.getElementById('right-panel'));
+	var control = document.getElementById('floating-panel');
+	control.style.display = 'block';
+	map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+	var onChangeHandler = function() {
+	  calculateAndDisplayRoute(directionsService, directionsDisplay);
+	};
+   // document.getElementById('submit').addEventListener('click', onChangeHandler);
+	$("#submit").on('click', function(event) {
+	event.preventDefault();
 
-      function initMap() {
-         
-       directionsDisplay = new google.maps.DirectionsRenderer;
-       directionsService = new google.maps.DirectionsService;
+	onChangeHandler();
 
-        var inputOne = document.getElementById('startingPoint');
-        var inputTwo = document.getElementById('destination');
-        var searchBoxOne = new google.maps.places.SearchBox(inputOne);
-        var searchBoxTwo = new google.maps.places.SearchBox(inputTwo);
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: {lat: 41.85, lng: -87.65}
-        });
-        directionsDisplay.setMap(map);
+	})
+	//document.getElementById('end').addEventListener('change', onChangeHandler);
+  }
 
-        //directionsDisplay.setPanel(document.getElementById('right-panel'));
-        var control = document.getElementById('floating-panel');
-        control.style.display = 'block';
-        map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-        
-       // document.getElementById('submit').addEventListener('click', onChangeHandler);
-        
-        //document.getElementById('end').addEventListener('change', onChangeHandler);
-      }
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+	var start = document.getElementById('startingPoint').value;
+	var end = document.getElementById('destination').value;
+	directionsService.route({
+	  origin: start,
+	  destination: end,
+	  travelMode: 'DRIVING'
+	}, function(response, status) {
+	  if (status === 'OK') {
+		directionsDisplay.setDirections(response);
+	   var distance = response.routes[0].legs[0].distance.text;
+	   var duration = response.routes[0].legs[0].duration.text;
+	   console.log(response.routes[0].legs[0].distance.text);
+		console.log(response.routes[0].legs[0].duration.text);
 
-      $("#submit").on('click', function(event) {
+		$("#right-panel").append("<p> Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + duration + "</strong></p>");
 
-        event.preventDefault();
-       
-        var onChangeHandler = function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
-        };
-        onChangeHandler();
+	  } else {
+	   bootbox.alert({
+	   message: "That city appears to be on Mars. Please call 1800-NASA-PLS for further travel info",
+	  size: 'large'
+	  });
+	  }
+	});
+  }
+</script>
 
-        });
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTGIHpFEDWOSxrj0u5EWP30GfzwyFbMR4&libraries=places&callback=initMap">
+</script>
 
-      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-
-        var start = document.getElementById('startingPoint').value;
-        var end = document.getElementById('destination').value;
-
-        directionsService.route({
-          origin: start,
-          destination: end,
-          travelMode: 'DRIVING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-           var distance = response.routes[0].legs[0].distance.text;
-           var duration = response.routes[0].legs[0].duration.text;
-           console.log(response.routes[0].legs[0].distance.text);
-            console.log(response.routes[0].legs[0].duration.text);
-
-            $("#right-panel").append("<strong>" + 'Distance to your destination: ' + distance + '<br>' + 'Duration of your travel: ' + duration + "</strong>");
-
-          } else {
-           bootbox.alert({
-           message: "That city appears to be on Mars. Please call 1800-NASA-PLS for further travel info",
-          size: 'large'
-          });
-          }
-        });
-      }
-    </script>
-
-    <script async defer 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTGIHpFEDWOSxrj0u5EWP30GfzwyFbMR4&libraries=places&callback=initMap">
-    </script>
-
-	  </body>
+</body>
 </html>

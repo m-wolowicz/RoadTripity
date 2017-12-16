@@ -32,13 +32,13 @@ body {
 
 .jumbotron h1 {
   font-family: 'Righteous', cursive;
-  font-size: 65px;
+  font-size: 60px;
   color: #fae596;
 }
 
 .jumbotron p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
     font-weight: 400;
 }
 
@@ -71,6 +71,7 @@ body {
 	height: 2px;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	border-style: none;
 }
 
 #inputFormDiv label {
@@ -99,6 +100,7 @@ body {
 	padding-right: 20px;
 	border: none;
 	margin-top: 15px;
+	border-radius: 4px;
 }
 
 #inputFormDiv button:hover {
@@ -109,64 +111,74 @@ body {
 
 
 /* CSS FOR GOOGLE MAPS API */
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
 
+#mapTripDataDiv {
+	padding: 0;
+	margin: 0;
+}
+
+#map-container {
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+}
 
 #map {
-  height: 40%;
-  width: 60%;
-}
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 400px;	/* Map height IS IMPORTANT!!!*/
+  width: 100%;
 }
 
-
+/* TRIP DATA CSS */
 #right-panel {
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 90px;
-  padding-right: 90px;
+	padding-top: 30px;
+    padding-left: 15px;
+    padding-bottom: 30px;
 }
 
-#right-panel select, #right-panel input {
-  font-size: 15px;
+#right-panel h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin-top: 0px;
+	letter-spacing: 1px;
+	color: #173e42;
+	text-align: center;
 }
 
-#right-panel select {
-  width: 40%;
+#right-panel hr {
+	width: 200px;
+	background-color: #3fb0ac;
+	height: 2px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-style: none;
 }
 
-#right-panel i {
-  font-size: 12px;
-}
-#right-panel {
-  height: 40%;
-  float: left;
-  width: 40%;
-  overflow: auto;
-}
-#map {
-  margin: 0 auto;
+#right-panel strong {
+	font-size: 200%;
+	display: block;
+	margin-bottom: 5px;
+	text-transform: uppercase;
 }
 
-
-@media print {
-  #map {
-    height: 500px;
-    margin: 0;
-  }
-  #right-panel {
-    float: left;
-    width: auto;
-  }
+#right-panel button {
+	font-family: 'Righteous', cursive;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	background-color: #173e42;
+	color: #dddfd5;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: none;
+	margin-top: 15px;
+	border-radius: 4px;
 }
 
-.adp {
-  max-width: 971px;
+#right-panel button:hover {
+  background-color: #3fb0ac;
+  color: #fae596;
 }
 
 
@@ -237,6 +249,7 @@ html, body {
 	padding: 15px 30px;
 	border: none;
 	margin: 5% 0;
+	border-radius: 4px;
 }
 
 #resetButton button:hover {
