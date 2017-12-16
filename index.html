@@ -21,7 +21,9 @@
     <!-- Linking our own CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <!-- Linking our own JAVASCRIPT -->
+    <!-- CDNs neede for bootbox alerts-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js" integrity="sha256-ZQwUJQVoHXhCr4uesYLDjsWxF8MybHrga5PLtL5BcqI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
     <!-- Linking Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous" rel="stylesheet">
@@ -68,7 +70,7 @@
                   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group">
                     <label for="numberTravelers">How Many Passengers Total</label>
-                    <input type="text" class="form-control" id="numberTravelers" placeholder="Passengers">
+                    <input type="number" min=1 oninput="validity.valid||(value='');" class="form-control" id="numberTravelers" placeholder="Passengers">
                     </div>
                   </div>
                 </div>
@@ -92,13 +94,13 @@
                   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group">
                     <label for="arrivalDate">Arrival Date</label>
-                    <input type="text" class="form-control" id="arrivalDate" placeholder="MM-DD-YYYY">
+                    <input type="date" class="form-control" id="arrivalDate" placeholder="MM-DD-YYYY">
                     </div>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group">
                     <label for="tripDuration">Trip Duration (# of Days)</label>
-                    <input type="text" class="form-control" id="tripDuration" placeholder="##">
+                    <input type="number" min=1 oninput="validity.valid||(value='');" class="form-control" id="tripDuration" placeholder="##">
                     </div>
                   </div>
                 </div>
@@ -241,8 +243,9 @@ Cannot be moved to seperate .js file due to API restrictions. -->
         };
        // document.getElementById('submit').addEventListener('click', onChangeHandler);
         $("#submit").on('click', function(event) {
-event.preventDefault();
-onChangeHandler();
+        event.preventDefault();
+        
+        onChangeHandler();
 
         })
         //document.getElementById('end').addEventListener('change', onChangeHandler);
@@ -265,7 +268,10 @@ onChangeHandler();
             $("#right-panel").append("<strong>" + 'Distance to your destination: ' + distance + '<br>' + 'Duration of your travel: ' + duration + "</strong>");
 
           } else {
-            window.alert('Directions request failed due to ' + status);
+           bootbox.alert({
+           message: "That city appears to be on Mars. Please call 1800-NASA-PLS for further travel info",
+          size: 'large'
+          });
           }
         });
       }
