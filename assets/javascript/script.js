@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
   
+  
 // Initializing Firebase 
   var config = {
     apiKey: "AIzaSyAcG4BqNXIOen6kziVMAtUmB21__n2e7JY",
@@ -71,6 +72,7 @@ database.ref("/adventures").on("child_added", function(snapshot) {
   function(errorObject) {
     console.log("The read failed: " + errorObject.code);
   });
+
 
 
 // On click statement that collects the users input data. 
