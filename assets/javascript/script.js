@@ -408,7 +408,7 @@ $('#submit').on('click', function(event){
         // Forecast for the third day
         var thirdDayForecast = response.forecast.txt_forecast.forecastday[6].fcttext;
         var thirdDayImage = response.forecast.txt_forecast.forecastday[6].icon_url;
-        
+
 
   // Creating and storing an image tag for the current condition
         var currentWeatherImage = $("<img>");
@@ -421,7 +421,7 @@ $('#submit').on('click', function(event){
    $("#currentConditionImg").append(currentWeatherImage);
    $("#currentConditionTxt").append("<p>" + "The current condition in" + city + "is:" + currentCondition + "</p>" );
 
-// Creating and storing an image tag for the 
+// Creating and storing an image tag for the
       var firstWeatherImage = $("<img>");
 
   // Setting the currentWeatherImage src attribute to imageUrl
@@ -433,7 +433,7 @@ $('#submit').on('click', function(event){
 $("#imgFDay1").append(firstWeatherImage);
 $("#txtFDay1").append(firstDayForecast);
 // Appending second image and forecast onto html
-// Creating and storing an image tag for the 
+// Creating and storing an image tag for the
       var secondWeatherImage = $("<img>");
 
   // Setting the currentWeatherImage src attribute to imageUrl
@@ -457,7 +457,7 @@ $("#txtFDay3").append(thirdDayForecast);
 
 
 
-  
+
 
 
 
