@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testing bootbox</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP 3: Latest compiled and minified CSS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js" integrity="sha256-ZQwUJQVoHXhCr4uesYLDjsWxF8MybHrga5PLtL5BcqI=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+</head>
+<body>
+<script>
+		
+var dialog = bootbox.dialog({
+    title: 'A custom dialog with init',
+    message: '<p><i class="fa fa-spin fa-spinner"></i> Loading...</p>'
+});
+dialog.init(function(){
+    setTimeout(function(){
+        dialog.find('.bootbox-body').html('I was loaded after the dialog was shown!');
+    }, 3000);
+});
+
+</script>
+</body>
+</html>
