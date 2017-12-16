@@ -390,26 +390,78 @@ $('#submit').on('click', function(event){
   url : "https://api.wunderground.com/api/4ca026adcc7248b3/geolookup/conditions/forecast10day/q/" + st + '/' + city + ".json",
   dataType : "jsonp",
   async: false,
-  success : function(parsed_json) {
-   console.log(parsed_json);
+  success : function(response) {
+   console.log(response);
 
 
-  // var condition = parsed_json.current_observation.icon
 
-  // // Saving the current_observation.icon_url property
-  //       var imageUrl = parsed_json.current_observation.icon_url
+  //  Saving the current_observation.icon_url property
+        var currentDayImage = response.current_observation.icon_url;
+        var currentCondition = response.current_observation.weather;
+        var currentTemperature = response.current_observation.temp_f;
+        // Forecast  and image for the first day
+        var firstDayForecast = response.forecast.txt_forecast.forecastday[2].fcttext;
+        var firstDayImage = response.forecast.txt_forecast.forecastday[2].icon_url;
+        // Forecast for the second day
+        var secondDayForecast = response.forecast.txt_forecast.forecastday[4].fcttext;
+        var secondDayImage = response.forecast.txt_forecast.forecastday[4].icon_url;
+        // Forecast for the third day
+        var thirdDayForecast = response.forecast.txt_forecast.forecastday[6].fcttext;
+        var thirdDayImage = response.forecast.txt_forecast.forecastday[6].icon_url;
+        
 
-  //       // Creating and storing an image tag
-  //       var weatherImage = $("<img>");
+  // Creating and storing an image tag for the current condition
+        var currentWeatherImage = $("<img>");
 
-  //       // Setting the weatherImage src attribute to imageUrl
-  //       weatherImage.attr("src", imageUrl);
-  //       weatherImage.attr("alt", "Today's forecast");
+  // Setting the currentWeatherImage src attribute to imageUrl
+         currentWeatherImage.attr("src", currentDayImage);
+// Adding alternative text
+        currentWeatherImage.attr("alt", "Today's forecast");
+// Appending the current image and forecast onto html
+   $("#currentConditionImg").append(currentWeatherImage);
+   $("#currentConditionTxt").append("<p>" + "The current condition in" + city + "is:" + currentCondition + "</p>" );
 
-  // $("#weatherResultsDiv").append("<p>" + "Current condition in " + city + "is:" + condition + "</p>");
+// Creating and storing an image tag for the 
+      var firstWeatherImage = $("<img>");
+
+  // Setting the currentWeatherImage src attribute to imageUrl
+        firstWeatherImage.attr("src", firstDayImage);
+// Adding alternative text
+        firstWeatherImage.attr("alt", "Today's forecast");
+
+// Appending first image and forecast onto html
+$("#imgFDay1").append(firstWeatherImage);
+$("#txtFDay1").append(firstDayForecast);
+// Appending second image and forecast onto html
+// Creating and storing an image tag for the 
+      var secondWeatherImage = $("<img>");
+
+  // Setting the currentWeatherImage src attribute to imageUrl
+        secondWeatherImage.attr("src", secondDayImage);
+// Adding alternative text
+        secondWeatherImage.attr("alt", "Today's forecast");
+
+$("#imgFDay2").append(secondWeatherImage);
+$("#txtFDay2").append(secondDayForecast);
+// Apeending third image and forecast onto html
+  var thirdWeatherImage = $("<img>");
+
+  // Setting the currentWeatherImage src attribute to imageUrl
+        thirdWeatherImage.attr("src", thirdDayImage);
+// Adding alternative text
+        thirdWeatherImage.attr("alt", "Today's forecast");
+
+$("#imgFDay3").append(thirdWeatherImage);
+$("#txtFDay3").append(thirdDayForecast);
 
 
-  // $("#weatherResultsDiv").append(weatherImage);
+
+
+  
+
+
+
+
   }
   		}); // end of Ajax call
 
