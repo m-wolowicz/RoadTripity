@@ -387,7 +387,7 @@ $('#submit').on('click', function(event){
 // Ajax request based on user's destination value
 	//var city = $('#destination').val()
     $.ajax({
-  url : "http://api.wunderground.com/api/4ca026adcc7248b3/geolookup/conditions/forecast10day/q/" + st + '/' + city + ".json",
+  url : "https://api.wunderground.com/api/4ca026adcc7248b3/geolookup/conditions/forecast10day/q/" + st + '/' + city + ".json",
   dataType : "jsonp",
   async: false,
   success : function(parsed_json) {
