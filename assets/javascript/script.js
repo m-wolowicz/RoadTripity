@@ -31,7 +31,6 @@ database.ref("/adventures").on("child_added", function(snapshot) {
    var tableRow = $("<tr>");
    var tableDisplay = $("<td>");
 
-
 // Displays on the past adventures the travelers name.
 
   tableRow.append(tableDisplay);
@@ -65,15 +64,12 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 
 // displays on the past adventures the table row
  $("tbody").append(tableRow);
-
-
  },
 
 // Part of the firebase
   function(errorObject) {
     console.log("The read failed: " + errorObject.code);
   });
-
 
 // On click statement that collects the users input data.
 $('#submit').on('click', function(event){
@@ -101,10 +97,8 @@ $('#submit').on('click', function(event){
 
 });
 
-
 $("#resetButton").on("click", function(event) {
     location.reload(event);
-
     });
 
 // FUNCTIONS
