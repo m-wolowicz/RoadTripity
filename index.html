@@ -29,7 +29,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous" rel="stylesheet">
 
 	<!-- Linking our own JAVASCRIPT -->
-	<script src="assets/javascript/script.js"></script>
+	<script type="text/javascript"	src="assets/javascript/script.js"></script>
 
 	<!-- Linking Google Firebase Database -->
 	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
@@ -143,6 +143,8 @@ We should still see how to solve this -->
 			<div class="" id="right-panel">
 				<h3>TRIP DATA</h3>
 				<hr>
+				<div id="tripDataResults">
+				</div>
 			</div>
 		</div>
 	</div>
@@ -313,7 +315,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 	   console.log(response.routes[0].legs[0].distance.text);
 		console.log(response.routes[0].legs[0].duration.text);
 
-		$("#right-panel").append("<p> Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + duration + "</strong></p>");
+		$("#tripDataResults").html("<p> Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + duration + "</strong></p>");
 
 	  } else {
 	   bootbox.alert({
