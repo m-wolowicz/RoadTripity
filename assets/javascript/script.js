@@ -45,7 +45,7 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 
          }
 
-  console.log(content);
+  // console.log(content);
    displayTable(content);
    },  function(errorObject) {
       console.log("The read failed: " + errorObject.code);
@@ -176,7 +176,7 @@ function weatherRecommendations() {
 
   				var currentDestinationWeather = "" + response.current_observation.weather + "";
 
-  				console.log(currentDestinationWeather);
+  				// console.log(currentDestinationWeather);
 
   				//Creating arrays for different types of weather
           var rain = [
@@ -421,7 +421,7 @@ $('#submit').on('click', function(event){
   //splitting raw city information into an array of strings
   var cityArr = cityRaw.split(',');
 
-  console.log(cityArr);
+  // console.log(cityArr);
 
   var stIndex = cityArr.length - 2
   var ctIndex = cityArr.length - 3
@@ -436,7 +436,7 @@ $('#submit').on('click', function(event){
   dataType : "jsonp",
   async: false,
   success : function(response) {
-   console.log(response);
+   // console.log(response);
 
 
 
