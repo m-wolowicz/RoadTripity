@@ -1,27 +1,8 @@
 //IMPORTANT!
 $(document).ready(function() {
 
-$("#hideDir").hide();
-	$("#showDir").on('click', function(event) {
-	event.preventDefault();
-	$("#dirDisplay").show();
-	$("#hideDir").show();
-	
-})
-
-	$("#hideDir").on('click', function(event){
-		event.preventDefault();
-		$("#hideDir").hide();
-		$("#dirDisplay").hide();
-		$("#ShowDir").show();
-		
-
-	})
-
 // FUNCTIONS
-//calendar input restricting to future dates only
-var today = new Date().toISOString().split('T')[0];
-          document.getElementsByName("somedate")[0].setAttribute('min', today);
+// =========
 
 //This function gets user input and uses WU API to populate weather conditions
 function weatherConditions() {
@@ -144,8 +125,6 @@ function weatherRecommendations() {
 
 	var city = cityArr[ctIndex];
 	var st = cityArr[stIndex];
-	console.log(city);
-	console.log(st);
 
 	//Save the user's destination choice as a variable
 	var userInputDestination = st + '/' + city;
@@ -161,7 +140,7 @@ function weatherRecommendations() {
 
 		  var currentDestinationWeather = "" + response.current_observation.weather + "";
 
-		  console.log(currentDestinationWeather);
+		  // console.log(currentDestinationWeather);
 
 		  //Creating arrays for different types of weather
 		  var rain = [
