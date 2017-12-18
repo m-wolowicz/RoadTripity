@@ -115,9 +115,7 @@ body {
 #mapTripDataDiv {
 	padding: 0;
 	margin: 0;
-	background-image: url('../images/gif2.gif');
-	background-size: 50%;
-	
+	background-image: url('../images/rdTrip.gif');
 
 }
 
@@ -137,7 +135,6 @@ body {
 	padding-top: 30px;
     padding-left: 15px;
     padding-bottom: 30px;
-    overflow: auto;
 }
 
 #right-panel h3 {
