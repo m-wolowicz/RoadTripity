@@ -1,0 +1,271 @@
+/*Creating our own CSS Style for the project*/
+
+/*Styles that apply to the entire page*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: #dddfd4;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 60px;
+}
+
+#pageContainer {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+
+/*JUMBOTRON*/
+.jumbotron {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.jumbotron h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 65px;
+  color: #fae596;
+}
+
+.jumbotron p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+    font-weight: 400;
+}
+
+
+
+/* FORM SECTION */
+#inputFormContainer {
+  background-color: #3fb0ac;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#inputFormDiv {
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#inputFormDiv h2 {
+
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin-top: 0px;
+	text-align: center;
+}
+
+#inputFormDiv hr {
+	width: 200px;
+	background-color: #fae596;
+	height: 2px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#inputFormDiv label {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	text-align: left;
+}
+
+#inputFormDiv input {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  height: 40px;
+  font-style: italic;
+}
+
+#inputFormDiv button {
+	font-family: 'Righteous', cursive;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	background-color: #fae596;
+	color: #173e43;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: none;
+	margin-top: 15px;
+}
+
+#inputFormDiv button:hover {
+  background-color: #173e43;
+  color: #fae596;
+}
+
+
+
+/* CSS FOR GOOGLE MAPS API */
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+
+
+#map {
+  height: 40%;
+  width: 60%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+#right-panel {
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+#right-panel select, #right-panel input {
+  font-size: 15px;
+}
+
+#right-panel select {
+  width: 40%;
+}
+
+#right-panel i {
+  font-size: 12px;
+}
+#right-panel {
+  height: 40%;
+  float: left;
+  width: 40%;
+  overflow: auto;
+}
+#map {
+  margin: 0 auto;
+}
+
+
+@media print {
+  #map {
+    height: 500px;
+    margin: 0;
+  }
+  #right-panel {
+    float: left;
+    width: auto;
+  }
+}
+
+.adp {
+  max-width: 971px;
+}
+
+
+
+/* Weather and Recommendations Div and Container */
+#wrResultsDiv {
+	background-color: #173e43;
+ }
+
+ #weatherResultsDiv {
+	 color: #fae596;
+	 padding: 30px;
+ }
+ #recommendationsDiv {
+	 color: #dddfd4;
+	 padding: 30px;
+ }
+
+
+
+ /* Past Adventures Div and Container */
+#pastAdventuresDiv {
+	background-color: #3fb0ac;
+	color: white;
+	padding-bottom: 30px;
+}
+
+#pastAdventuresDiv h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	text-align: center;
+	margin-top: 30px;
+	letter-spacing: 1px;
+}
+
+#pastAdventuresDiv hr {
+	width: 200px;
+	background-color: #fae596;
+	height: 2px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#pastAdventuresDiv th {
+	color: #173e43;
+}
+
+
+/* RESET BUTTON */
+#resetButton {
+	background-image: url("../images/resetBackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+	margin-bottom: 60px;
+	padding: 30px;
+	text-align: center;
+}
+
+#resetButton button {
+	font-family: 'Righteous', cursive;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 20px;
+	background-color: #fae596;
+	color: #3fb0ac;
+	padding: 15px 30px;
+	border: none;
+	margin: 5% 0;
+}
+
+#resetButton button:hover {
+	background-color: #3fb0ac;
+	color: #fae596;
+}
+
+
+
+/* footer */
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: #173e43;
+	color: white;
+	text-align: center;
+	font-size: 75%;
+}
+
+#footer {
+  display: table;
+  height: 100%;
+}
+
+#footer p {
+  display: table-cell;
+  margin: 0;
+  vertical-align: middle;
+}
