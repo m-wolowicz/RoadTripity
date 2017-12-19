@@ -134,13 +134,21 @@ We should still see how to solve this -->
 	<!--Begin Section 2: MAP and Trip Data-->
 	<div id="floating-panel"></div>
 	<div class="container-fluid" id="mapTripDataDiv">
+		<!-- VIDEO -->
+		<div id="overlay"></div>
+		<div id="videoText">
+			<p>How far? How log? How much?… All your road trip answers with one click!</p>
+		</div>
+		<video preload="true" autoplay="autoplay" loop="loop" volume="0" id="backgroundVideo">
+			<source src="assets/videos/771216525.mp4" type="video/mp4">
+		</video>       
 		<!-- MAP -->
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="map-container">
 				<div id="map"></div>
 			</div>
 		<!-- Trip Data -->
-		<div class="container col-xs-12 col-sm-12 col-md-6 col-lg-6">
-			<div class="" id="right-panel">
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="background-color: #dddfd5;">
+			<div id="right-panel">
 				<h3>TRIP DATA</h3>
 				<hr>
 				<div class="col-md-6" id="tripDataResults">
@@ -313,6 +321,14 @@ function initMap() {
    // document.getElementById('submit').addEventListener('click', onChangeHandler);
 	$("#submit").on('click', function(event) {
 	event.preventDefault();
+
+	//Hiding video and video overlay - MW
+	$("#videoText").css("display", "none");
+	$("#overlay").css("display", "none");
+	$("#backgroundVideo").css("display", "none");
+	$("#mapTripDataDiv").css("overflow", "visible");
+
+
 	$("#dirDisplay").hide();
 	
 
