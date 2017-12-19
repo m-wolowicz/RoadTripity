@@ -342,15 +342,15 @@ function weatherRecommendations() {
 		  //Using an else if statement to display different recommendations based on the current weather conditions at the destination city
 		  if (rainTrue) {
 			//Populate recommendation for Rain in the HTML
-			$("#roadTipText").html("Consider packing umbrellas, ponchos, rain boots and rain coats. Check your car's wiper blades, your tires' thread depth, lights, and emergency kit.");
+			$("#roadTipText").html("<img src='assets/images/animated/rainy-6.svg' alt='Rain Icon'><br> Consider packing umbrellas, ponchos, rain boots and rain coats. Check your car's wiper blades, your tires' thread depth, lights, and emergency kit.");
 
 		  } else if (snowTrue) {
 			//Populate recommendation for Snow in the HTML
-			$("#roadTipText").html("Consider packing extra socks, heavy winter coats, snow boots, and a shovel. Check that your tires are properly inflated, keep your gas tank at least half full to avoid gas line freeze-up.");
+			$("#roadTipText").html("<img src='assets/images/animated/snowy-4.svg' alt='Snow Icon'><br> Consider packing extra socks, heavy winter coats, snow boots, and a shovel. Check that your tires are properly inflated, keep your gas tank at least half full to avoid gas line freeze-up.");
 
 		  } else if (iceTrue) {
 			//Populate recommendation for Ice in the HTML
-			$("#roadTipText").html("Consider packing hats and helmets to protect your head, as well as snow boots and an ice pick. Remember bridges freeze before roads, and drive in the tire tracks of other vehicles as there will be more traction in these areas");
+			$("#roadTipText").html("<img src='assets/images/animated/snowy-6.svg' alt='Ice Icon'><br> Consider packing hats and helmets to protect your head, as well as snow boots and an ice pick. Remember bridges freeze before roads, and drive in the tire tracks of other vehicles as there will be more traction in these areas");
 
 		  } else if (dustyTrue) {
 			//Populate recommendation for Dust and Sand in the HTML
@@ -366,15 +366,15 @@ function weatherRecommendations() {
 
 		  } else if (cloudyTrue) {
 			//Populate recommendation for Cloudy in the HTML
-			$("#roadTipText").html("Consider wearing SPF protection even when it's cloudy outside. Clouds usually bring rain with them, bring your umbrella just in case.");
+			$("#roadTipText").html("<img src='assets/images/animated/cloudy.svg' alt='Cloudy Icon'><br> Consider wearing SPF protection even when it's cloudy outside. Clouds usually bring rain with them, bring your umbrella just in case.");
 
 		  } else if (clearTrue) {
 			//Populate recommendation for Clear in the HTML
-			$("#roadTipText").html("I can see clearly now the rain is gone! The skies are clear, go out and enjoy the road... but remember to protect your sking from the sun!");
+			$("#roadTipText").html("<img src='assets/images/animated/day.svg' alt='Clear Icon'><br> I can see clearly now the rain is gone! The skies are clear, go out and enjoy the road... but remember to protect your sking from the sun!");
 
 		  } else if (thunderTrue) {
 			//Populate recommendation for Thunderstorms in the HTML
-			$("#roadTipText").html("Consider pakcing a Disaster Supplies Kit in your trunk. Avoid touching metal or other surfaces that conduct electricity in and outside the vehicle.");
+			$("#roadTipText").html("<img src='assets/images/animated/thunder.svg' alt='Thunder Icon'><br> Consider pakcing a Disaster Supplies Kit in your trunk. Avoid touching metal or other surfaces that conduct electricity in and outside the vehicle.");
 
 		  } else if (severeTrue) {
 			//Populate recommendation for Severe Conditions in the HTML

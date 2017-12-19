@@ -398,6 +398,10 @@ body {
 	letter-spacing: 1px;
 }
 
+#roadTipText img {
+	height: 200px;
+    margin: -40px 0px;
+}
 
 
  /* Past Adventures Div and Container */
