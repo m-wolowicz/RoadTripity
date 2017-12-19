@@ -32,21 +32,13 @@ body {
 
 .jumbotron h1 {
   font-family: 'Righteous', cursive;
-<<<<<<< HEAD
-  font-size: 65px;
-=======
   font-size: 60px;
->>>>>>> dfe59b829d4b7665f774ac2219a37856cb990853
   color: #fae596;
 }
 
 .jumbotron p {
   font-family: 'Open Sans', sans-serif;
-<<<<<<< HEAD
-  font-size: 20px;
-=======
   font-size: 18px;
->>>>>>> dfe59b829d4b7665f774ac2219a37856cb990853
     font-weight: 400;
 }
 
@@ -79,10 +71,7 @@ body {
 	height: 2px;
 	margin-top: 30px;
 	margin-bottom: 30px;
-<<<<<<< HEAD
-=======
 	border-style: none;
->>>>>>> dfe59b829d4b7665f774ac2219a37856cb990853
 }
 
 #inputFormDiv label {
@@ -111,10 +100,7 @@ body {
 	padding-right: 20px;
 	border: none;
 	margin-top: 15px;
-<<<<<<< HEAD
-=======
 	border-radius: 4px;
->>>>>>> dfe59b829d4b7665f774ac2219a37856cb990853
 }
 
 #inputFormDiv button:hover {
@@ -125,136 +111,14 @@ body {
 
 
 /* CSS FOR GOOGLE MAPS API */
-<<<<<<< HEAD
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
-
-
-#map {
-  height: 40%;
-  width: 60%;
-}
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-
-#right-panel {
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 90px;
-  padding-right: 90px;
-}
-
-#right-panel select, #right-panel input {
-  font-size: 15px;
-}
-
-#right-panel select {
-  width: 40%;
-}
-
-#right-panel i {
-  font-size: 12px;
-}
-#right-panel {
-  height: 40%;
-  float: left;
-  width: 40%;
-  overflow: auto;
-}
-#map {
-  margin: 0 auto;
-}
-
-
-@media print {
-  #map {
-    height: 500px;
-    margin: 0;
-  }
-  #right-panel {
-    float: left;
-    width: auto;
-  }
-}
-
-.adp {
-  max-width: 971px;
-=======
 
 #mapTripDataDiv {
 	padding: 0;
 	margin: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	height: 400px;
-	width: 100%;
-	overflow: hidden;
+	background-image: url('../images/rdTrip.gif');
+
 }
 
-/*Background Video - Overlay and Text */
-
-#videoText {
-	font-family: 'Righteous', cursive;
-	font-size: 340%;
-	color: #fae596;
-	max-width: 1000px;
-	text-align: center;
-	position: relative;
-	padding: 20px;
-	left: 50%;
-	top: 50%;
-	transform: translateX(-50%) translateY(-50%);
-}
-
-#videoText p {
-	font-size: 34px;
-}
-
-@include media-breakpoint-up(md) {
-  	#videoText p {
-    font-size: 40px;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  #videoText p {
-    font-size: 50px;
-  }
-}
-
-#overlay {
-	background: #183e43;
-	opacity: 0.5;
-	position: absolute;
-	z-index: -50;
-	text-align: center;
-	margin: 0%;
-	height: 405px;
-	width: 100%;
-  }
-
-#backgroundVideo {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: -100;
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
-	background-size: cover;
-}
-
-/*Map*/
 #map-container {
 	position: relative;
 	overflow: hidden;
@@ -264,7 +128,6 @@ html, body {
 #map {
   height: 400px;	/* Map height IS IMPORTANT!!!*/
   width: 100%;
-  background-color: #dddfd4;
 }
 
 /* TRIP DATA CSS */
@@ -272,8 +135,6 @@ html, body {
 	padding-top: 30px;
     padding-left: 15px;
     padding-bottom: 30px;
-    overflow: auto;
-    background-color: #dddfd4;
 }
 
 #right-panel h3 {
@@ -322,18 +183,6 @@ html, body {
   color: #fae596;
 }
 
-/*Directions*/
-
-#dirDisplay {
-	background-color: white;
-	text-align: center;
-}
-
-#dirResults {
-
->>>>>>> dfe59b829d4b7665f774ac2219a37856cb990853
-}
-
 
 
 /* Weather and Recommendations Div and Container */
@@ -341,17 +190,6 @@ html, body {
 	background-color: #173e43;
  }
 
-<<<<<<< HEAD
- #weatherResultsDiv {
-	 color: #fae596;
-	 padding: 30px;
- }
- #recommendationsDiv {
-	 color: #dddfd4;
-	 padding: 30px;
- }
-
-=======
 /*Weather Results*/
  #weatherResultsDiv {
 	color: #fae595;
@@ -452,7 +290,6 @@ html, body {
 	border-style: none;
 }
 
->>>>>>> dfe59b829d4b7665f774ac2219a37856cb990853
 
 
  /* Past Adventures Div and Container */
@@ -505,10 +342,7 @@ html, body {
 	padding: 15px 30px;
 	border: none;
 	margin: 5% 0;
-<<<<<<< HEAD
-=======
 	border-radius: 4px;
->>>>>>> dfe59b829d4b7665f774ac2219a37856cb990853
 }
 
 #resetButton button:hover {
@@ -540,8 +374,4 @@ html, body {
   display: table-cell;
   margin: 0;
   vertical-align: middle;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> dfe59b829d4b7665f774ac2219a37856cb990853
