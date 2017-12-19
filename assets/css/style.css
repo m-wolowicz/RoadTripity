@@ -224,7 +224,7 @@ body {
 	font-size: 200%;
 	display: block;
 	margin-bottom: 5px;
-	text-transform: uppercase;
+	color: #173e42;
 }
 
 #right-panel button {
@@ -248,15 +248,28 @@ body {
   color: #fae596;
 }
 
+#tripDataButtonsDiv {
+	text-align: center;
+}
+
 /*Directions*/
 
 #dirDisplay {
 	background-color: white;
 	text-align: center;
+	display: none;
 }
 
 #dirResults {
+	max-width: 970px;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	display: inline-block;
+}
 
+.adp-directions {
+    display: inline-block;
 }
 
 
@@ -303,7 +316,11 @@ body {
 
  #displayFlex {
  	display: flex;
-    border-bottom: 1px solid white;
+ }
+
+ #weatherSecondRow {
+ 	border-bottom: 1px solid white;
+ 	padding-top: 15px;
     padding-bottom: 30px;
     margin-bottom: 30px;
  }
@@ -344,9 +361,12 @@ body {
 /*Recommendations*/
 
 #recommendationsDiv {
-	 color: #dddfd4;
-	 padding: 30px;
-	 padding-left: 15px;
+    color: #dddfd4;
+    padding: 30px;
+    padding-left: 15px;
+    display: inline-block;
+    min-height: 320px;
+    padding-left: 30px;
  }
 
 #recommendationsDiv h3 {
@@ -364,6 +384,18 @@ body {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	border-style: none;
+}
+#tipDiv {
+	    display: table;
+}
+
+#roadTipText {
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 150%;
+	color: #fbe596;
+	letter-spacing: 1px;
 }
 
 
@@ -393,6 +425,34 @@ body {
 
 #pastAdventuresDiv th {
 	color: #173e43;
+	text-align: center;
+}
+
+#pastAdventuresDiv tr {
+	vertical-align: middle;
+
+}
+
+#pastAdventuresDiv td {
+	vertical-align: middle;
+	text-align: center;
+}
+
+
+#removeEntryButton {
+	background-color: #fae596;
+	color: #183e43;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	padding: 3px 20px;
+	vertical-align: middle;
+	border: none;
+}
+
+#removeEntryButton:hover {
+	background-color: #183e43;;
+	color: #fae596;
 }
 
 
