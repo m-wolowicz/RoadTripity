@@ -2,9 +2,11 @@
 $(document).ready(function() {
 
 $("#hideDir").hide();
+
 	$("#showDir").on('click', function(event) {
 	event.preventDefault();
 	$("#dirDisplay").show();
+	$("#dirDisplay").css("display", "block");
 	$("#hideDir").show();
 	
 })
@@ -60,6 +62,7 @@ function weatherConditions() {
   //  Saving the current_observation.icon_url property
 		var currentDayImage = (response.current_observation.icon_url).replace(/i\/c\/k/, "i\/c\/i");
 		var currentCondition = "<strong>" + response.current_observation.weather + "</strong><br>" + response.current_observation.temp_f + "&#8457";		
+		var currentConditionLongText = response.forecast.txt_forecast.forecastday[0].fcttext;
 		// Forecast  and image for the first day
 		var firstDayForecast = "<strong>" + response.forecast.simpleforecast.forecastday[1].date.weekday + "</strong><br>" + response.forecast.simpleforecast.forecastday[1].conditions + "<br>" + "H " + response.forecast.simpleforecast.forecastday[1].high.fahrenheit + "&#8457 / " + "L " + response.forecast.simpleforecast.forecastday[1].low.fahrenheit + "&#8457";
 		var firstDayImage = (response.forecast.simpleforecast.forecastday[1].icon_url).replace(/i\/c\/k/, "i\/c\/i");
@@ -84,6 +87,7 @@ function weatherConditions() {
 // Appending the current image and forecast onto html
    $("#currentConditionImg").html(currentWeatherImage);
    $("#currentConditionTxt").html("<p>The current weather condition in the city of " + city + " is: <br>" + currentCondition + "</p>" );
+   $("#currConditionLongTxt").html("<p>" + currentConditionLongText + "</p>")
 
 // Creating and storing an image tag for the
 	  var firstWeatherImage = $("<img>");
@@ -338,51 +342,51 @@ function weatherRecommendations() {
 		  //Using an else if statement to display different recommendations based on the current weather conditions at the destination city
 		  if (rainTrue) {
 			//Populate recommendation for Rain in the HTML
-			$("#roadTipText").html("Bring and umbrella");
+			$("#roadTipText").html("<img src='assets/images/animated/rainy-6.svg' alt='Rain Icon'><br> Consider packing umbrellas, ponchos, rain boots and rain coats. Check your car's wiper blades, your tires' thread depth, lights, and emergency kit.");
 
 		  } else if (snowTrue) {
 			//Populate recommendation for Snow in the HTML
-			$("#roadTipText").html("Bring a shovel");
+			$("#roadTipText").html("<img src='assets/images/animated/snowy-4.svg' alt='Snow Icon'><br> Consider packing extra socks, heavy winter coats, snow boots, and a shovel. Check that your tires are properly inflated, keep your gas tank at least half full to avoid gas line freeze-up.");
 
 		  } else if (iceTrue) {
 			//Populate recommendation for Ice in the HTML
-			$("#roadTipText").html("Bring an ice pick");
+			$("#roadTipText").html("<img src='assets/images/animated/snowy-6.svg' alt='Ice Icon'><br> Consider packing hats and helmets to protect your head, as well as snow boots and an ice pick. Remember bridges freeze before roads, and drive in the tire tracks of other vehicles as there will be more traction in these areas");
 
 		  } else if (dustyTrue) {
 			//Populate recommendation for Dust and Sand in the HTML
-			$("#roadTipText").html("It's raining Sand! Protect yourself!");
+			$("#roadTipText").html("Consider packing a scarf, filter masks for breathing, and proper eyewear to shield your eyes from the dust. Drive slowly, leaving enough distance between you and other cars and eep your headlights on, using low beams.");
 
 		  } else if (fogTrue) {
 			//Populate recommendation for Fog in the HTML
-			$("#roadTipText").html("Turn on your fog lights");
+			$("#roadTipText").html("Remember to pack you glasses and contacts, as well as flashlights. While driving, slow down, use low-beam headlights, and use fog lights.");
 
 		  } else if (volcanicTrue) {
 			//Populate recommendation for Volcano and Ash in the HTML
-			$("#roadTipText").html("The earth is errupting, be careful");
+			$("#roadTipText").html("There is volcanic activity nearby. Stay outside the exclusion zones around the crater. Volcanic smoke, ash and haze may affect your health and roat trip plans.");
 
 		  } else if (cloudyTrue) {
 			//Populate recommendation for Cloudy in the HTML
-			$("#roadTipText").html("It's just clouds out there");
+			$("#roadTipText").html("<img src='assets/images/animated/cloudy.svg' alt='Cloudy Icon'><br> Consider wearing SPF protection even when it's cloudy outside. Clouds usually bring rain with them, bring your umbrella just in case.");
 
 		  } else if (clearTrue) {
 			//Populate recommendation for Clear in the HTML
-			$("#roadTipText").html("I can see clearly now the rain is gone");
+			$("#roadTipText").html("<img src='assets/images/animated/day.svg' alt='Clear Icon'><br> I can see clearly now the rain is gone! The skies are clear, go out and enjoy the road... but remember to protect your sking from the sun!");
 
 		  } else if (thunderTrue) {
 			//Populate recommendation for Thunderstorms in the HTML
-			$("#roadTipText").html("Light travels faster than sound, get out of the water!");
+			$("#roadTipText").html("<img src='assets/images/animated/thunder.svg' alt='Thunder Icon'><br> Consider pakcing a Disaster Supplies Kit in your trunk. Avoid touching metal or other surfaces that conduct electricity in and outside the vehicle.");
 
 		  } else if (severeTrue) {
 			//Populate recommendation for Severe Conditions in the HTML
-			$("#roadTipText").html("Anytime you hear Funnel Cloud or Squalls, sounds like Tornado To Me. Take cover and turn on your weather radio!");
+			$("#roadTipText").html("Anytime you hear Funnel Cloud or Squalls, a Tornado might not be far behind. Consider pulling over at the nearest stop, taking cover and turning on your weather radio!");
 
 		  } else if (unknownTrue) {
 			//Populate recommendation for Unknown Weather Conditions in the HTML
-			$("#roadTipText").html("That's scary, the weather is unknown. Prepare for the Zombie Apocalipse");
+			$("#roadTipText").html("That's scary, the weather is unknown. Prepare for the Zombie Apocalipse.  MREs, guns and ammo are highly recommended!");
 
 		  } else {
 			//Populate recommendation for Anything else in the HTML
-			$("#roadTipText").html("Well that's odd. We have no weather! ");
+			$("#roadTipText").html("Well that's odd. We have no weather!");
 		  } // End If Else Statement
 	  } //End function(response)
 	}); //End Ajax
@@ -464,7 +468,7 @@ database.ref("/adventures").on("child_added", function(snapshot) {
   tableDisplay2.text(content.travelersTotal); 
 
 // Displays button 
-  var removeButton= $("<button type='button' class='removeme btn btn-primary btn-xs deleteButton'><p>Remove<p></button>");
+  var removeButton= $("<button type='button' class='removeme btn btn-xs deleteButton' id='removeEntryButton'>REMOVE</button>");
   removeButton.on("click", function(){
   })
 
