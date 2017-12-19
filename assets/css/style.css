@@ -115,12 +115,72 @@ body {
 #mapTripDataDiv {
 	padding: 0;
 	margin: 0;
-	background-image: url('../images/gif2.gif');
-	background-size: 50%;
-	
-
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 400px;
+	width: 100%;
+	overflow: hidden;
 }
 
+/*Background Video - Overlay and Text */
+
+#videoText {
+	font-family: 'Righteous', cursive;
+	font-size: 340%;
+	color: #fae596;
+	max-width: 1000px;
+	text-align: center;
+	position: relative;
+	padding: 20px;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+#videoText p {
+	font-size: 34px;
+}
+
+@include media-breakpoint-up(md) {
+  	#videoText p {
+    font-size: 40px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #videoText p {
+    font-size: 50px;
+  }
+}
+
+#overlay {
+	background: #183e43;
+	opacity: 0.5;
+	position: absolute;
+	z-index: -50;
+	text-align: center;
+	margin: 0%;
+	height: 405px;
+	width: 100%;
+  }
+
+#backgroundVideo {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+}
+
+/*Map*/
 #map-container {
 	position: relative;
 	overflow: hidden;
@@ -130,6 +190,7 @@ body {
 #map {
   height: 400px;	/* Map height IS IMPORTANT!!!*/
   width: 100%;
+  background-color: #dddfd4;
 }
 
 /* TRIP DATA CSS */
@@ -138,6 +199,7 @@ body {
     padding-left: 15px;
     padding-bottom: 30px;
     overflow: auto;
+    background-color: #dddfd4;
 }
 
 #right-panel h3 {
@@ -184,6 +246,17 @@ body {
 #right-panel button:hover {
   background-color: #3fb0ac;
   color: #fae596;
+}
+
+/*Directions*/
+
+#dirDisplay {
+	background-color: white;
+	text-align: center;
+}
+
+#dirResults {
+
 }
 
 
