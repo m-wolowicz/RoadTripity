@@ -468,7 +468,7 @@ database.ref("/adventures").on("child_added", function(snapshot) {
   tableDisplay2.text(content.travelersTotal); 
 
 // Displays button 
-  var removeButton= $("<button type='button' class='removeme btn btn-xs deleteButton' id='removeEntryButton'>REMOVE</button>");
+  var removeButton= $("<td><button type='button' class='removeme btn btn-xs deleteButton' id='removeEntryButton'>REMOVE</button></td>");
   removeButton.on("click", function(){
   })
 
@@ -671,9 +671,11 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 	}); // End Of On Click Event
 
 	$('tbody').on('click', ".deleteButton", function(e){
-		var tableRow = $(this).parent(); 
+
+		var tableRow = $(this).parent().parent(); 
 
 		var dataObject = tableRow.data('dataInfo');
+		console.log(dataObject);
 
 		database.ref("/adventures/" + dataObject.id).remove();
 
