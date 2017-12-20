@@ -192,7 +192,7 @@ We should still see how to solve this -->
       		<span class="close"> close &times;</span>
       		<h2>Well...that'not good...</h2>
     	</div>
-   	 	<div id="directions" class="modal-body text-center">
+   	 	<div class="modal-body text-center">
       		<h3> Sorry we could not provide gas cost for this trip. It appears that updates current gas prices are not available for part of the areas you are driving to..</h3>
       		
     	</div>
@@ -211,9 +211,9 @@ We should still see how to solve this -->
   	<div class="modal-content">
    	 	<div class="modal-header">
       		<span class="close"> close &times;</span>
-      		<h2>Well...that'not good...</h2>
+      		<h2>Well...that's not good...</h2>
     	</div>
-   	 	<div id="directions" class="modal-body text-center">
+   	 	<div class="modal-body text-center">
       		<h3> Destination must contain at least 'city, state and country' to display accurate weather results for your trip</h3>
       		
     	</div>
@@ -256,7 +256,7 @@ We should still see how to solve this -->
       		<span class="close"> close &times;</span>
       		<h2>Well...that'not good...</h2>
     	</div>
-   	 	<div id="directions" class="modal-body text-center">
+   	 	<div class="modal-body text-center">
       		<h3> YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..</h3>
       		
     	</div>
@@ -509,9 +509,9 @@ console.log(eastObj.states);
   				var areaIdone = midObj.coastId; 	
   					
   					} else {
-  						bootbox.alert({
-	  					 message: "Sorry we could not provide gas cost for this trip. It appears that updates current gas prices are not available for part of the areas you are driving to..",
-	  					size: 'large'
+  						$("#myModal3").css('display', 'block');
+	  	$(".close").on("click", function() {
+	  		$("#myModal3").css('display', 'none');
 	 					 });
   					}
   					console.log(areaIdone);
