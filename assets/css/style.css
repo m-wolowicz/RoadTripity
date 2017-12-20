@@ -1,591 +1,640 @@
-/*Creating our own CSS Style for the project*/
+/*Creating our own CSS Style Sheeet for the project*/
 
 /*Styles that apply to the entire page*/
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 body {
-  background-color: #dddfd4;
+	background-color: #dddfd4;
 	font-family: 'Montserrat', sans-serif;
 	margin-bottom: 60px;
 }
 
 #pageContainer {
-  padding-left: 0px;
-  padding-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
-
 
 
 /*JUMBOTRON*/
-.jumbotron {
-    background-image: url("../images/background.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    background-size: cover;
-  color: white;
-  margin-bottom: 0px;
-}
+	.jumbotron {
+		background-image: url("../images/background.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		-webkit-background-size: cover;
+		background-size: cover;
+		color: white;
+		margin-bottom: 0px;
+	}
 
-.jumbotron h1 {
-  font-family: 'Righteous', cursive;
-  font-size: 60px;
-  color: #fae596;
-}
+	.jumbotron h1 {
+		font-family: 'Righteous', cursive;
+		font-size: 60px;
+		color: #fae596;
+	}
 
-.jumbotron p {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-    font-weight: 400;
-}
-
+	.jumbotron p {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+	}
 
 
 /* FORM SECTION */
-#inputFormContainer {
-  background-color: #3fb0ac;
-  padding-left: 0px;
-  padding-right: 0px;
-}
+	#inputFormContainer {
+		background-color: #3fb0ac;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 
-#inputFormDiv {
-  color: white;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
+	#inputFormDiv {
+		color: white;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
 
-#inputFormDiv h2 {
+	#inputFormDiv h2 {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		margin-top: 0px;
+		text-align: center;
+	}
 
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	margin-top: 0px;
-	text-align: center;
-}
+	#inputFormDiv hr {
+		width: 200px;
+		background-color: #fae596;
+		height: 2px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		border-style: none;
+	}
 
-#inputFormDiv hr {
-	width: 200px;
-	background-color: #fae596;
-	height: 2px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	border-style: none;
-}
+	#inputFormDiv label {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		font-size: 15px;
+		text-align: left;
+	}
 
-#inputFormDiv label {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
-	font-size: 15px;
-	text-align: left;
-}
+	#inputFormDiv input {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		font-size: 15px;
+		height: 40px;
+		font-style: italic;
+	}
 
-#inputFormDiv input {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  height: 40px;
-  font-style: italic;
-}
+	#inputFormDiv button {
+		font-family: 'Righteous', cursive;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 20px;
+		background-color: #fae596;
+		color: #173e43;
+		padding-left: 20px;
+		padding-right: 20px;
+		border: none;
+		margin-top: 15px;
+		border-radius: 4px;
+	}
 
-#inputFormDiv button {
-	font-family: 'Righteous', cursive;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 20px;
-	background-color: #fae596;
-	color: #173e43;
-	padding-left: 20px;
-	padding-right: 20px;
-	border: none;
-	margin-top: 15px;
-	border-radius: 4px;
-}
-
-#inputFormDiv button:hover {
-  background-color: #173e43;
-  color: #fae596;
-}
-
+	#inputFormDiv button:hover {
+		background-color: #173e43;
+		color: #fae596;
+	}
 
 
-/* CSS FOR GOOGLE MAPS API */
+/* BACKGROUND VIDEO + OVERLAY + TEXT */
 
-#mapTripDataDiv {
-	padding: 0;
-	margin: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	height: 400px;
-	width: 100%;
-	overflow: hidden;
-}
+	#videoText {
+		font-family: 'Righteous', cursive;
+		font-size: 340%;
+		color: #fae596;
+		max-width: 1000px;
+		text-align: center;
+		position: relative;
+		padding: 20px;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	}
 
-/*Background Video - Overlay and Text */
+	#videoText p {
+		font-size: 34px;
+	}
 
-#videoText {
-	font-family: 'Righteous', cursive;
-	font-size: 340%;
-	color: #fae596;
-	max-width: 1000px;
-	text-align: center;
-	position: relative;
-	padding: 20px;
-	left: 50%;
-	top: 50%;
-	transform: translateX(-50%) translateY(-50%);
-}
+	@include media-breakpoint-up(md) {
+		#videoText p {
+		font-size: 40px;
+		}
+	}
 
-#videoText p {
-	font-size: 34px;
-}
+	@include media-breakpoint-up(lg) {
+		#videoText p {
+		font-size: 50px;
+		}
+	}
 
-@include media-breakpoint-up(md) {
-  	#videoText p {
-    font-size: 40px;
-  }
-}
+	#overlay {
+		background: #183e43;
+		opacity: 0.5;
+		position: absolute;
+		z-index: -50;
+		text-align: center;
+		margin: 0%;
+		height: 405px;
+		width: 100%;
+	}
 
-@include media-breakpoint-up(lg) {
-  #videoText p {
-    font-size: 50px;
-  }
-}
-
-#overlay {
-	background: #183e43;
-	opacity: 0.5;
-	position: absolute;
-	z-index: -50;
-	text-align: center;
-	margin: 0%;
-	height: 405px;
-	width: 100%;
-  }
-
-#backgroundVideo {
-	position: relative;
-	top: 50%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: -100;
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
-	background-size: cover;
-}
-
-/*Map*/
-#map-container {
-	position: relative;
-	overflow: hidden;
-	padding: 0;
-}
-
-#map {
-  height: 400px;	/* Map height IS IMPORTANT!!!*/
-  width: 100%;
-  background-color: #dddfd4;
-}
-
-/* TRIP DATA CSS */
-#right-panel {
-	padding-top: 30px;
-    padding-left: 15px;
-    padding-bottom: 30px;
-    overflow: auto;
-    background-color: #dddfd4;
-}
-
-#right-panel h3 {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	margin-top: 0px;
-	letter-spacing: 1px;
-	color: #173e42;
-	text-align: center;
-}
-
-#right-panel hr {
-	width: 200px;
-	background-color: #3fb0ac;
-	height: 2px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	border-style: none;
-}
-
-#right-panel strong {
-	font-size: 200%;
-	display: block;
-	margin-bottom: 5px;
-	color: #173e42;
-}
-
-#right-panel button {
-	font-family: 'Righteous', cursive;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 20px;
-	background-color: #173e42;
-	color: #dddfd5;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	border: none;
-	margin-top: 15px;
-	border-radius: 4px;
-}
-
-#right-panel button:hover {
-  background-color: #3fb0ac;
-  color: #fae596;
-}
-
-#tripDataButtonsDiv {
-	text-align: center;
-}
-
-/*Directions*/
-
-#dirDisplay {
-	background-color: white;
-	text-align: center;
-	display: none;
-}
-table.adp-directions {
-	margin: 0 auto;
-	width: 80%;
-}
-
-#dirResults {
-	max-width: 970px;
-	text-align: center;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	display: inline-block;
-}
-
-.adp-directions {
-    display: inline-block;
-}
+	#backgroundVideo {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		-webkit-transform: translateX(-50%) translateY(-50%);
+		transform: translateX(-50%) translateY(-50%);
+		background-size: cover;
+	}
 
 
+/* MAP + TRIP DATA + DIRECTIONS RESULTS */
 
-/* Weather and Recommendations Div and Container */
-#wrResultsDiv {
-	background-color: #173e43;
- }
+	#mapTripDataDiv {
+		padding: 0;
+		margin: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 400px;
+		width: 100%;
+		overflow: hidden;
+	}
 
-/*Weather Results*/
- #weatherResultsDiv {
-	color: #fae595;
-    padding: 30px;
-    padding-left: 0;
-    padding-right: 15px
- }
+	/* MAP */
+		#map-container {
+			position: relative;
+			overflow: hidden;
+			padding: 0;
+		}
 
- #weatherResultsDiv h3 {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	margin-top: 0px;
-	letter-spacing: 1px;
-	text-align: center;
-}
+		#map {
+			height: 400px;	/* Map height IS IMPORTANT!!!*/
+			width: 100%;
+			background-color: #dddfd4;
+		}
 
- #weatherResultsDiv hr {
-	width: 200px;
-	background-color: #fae596;
-	height: 2px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	border-style: none;
-}
+	/* TRIP DATA CSS */
+		#right-panel {
+			padding-top: 30px;
+			padding-left: 15px;
+			padding-bottom: 30px;
+			overflow: auto;
+			background-color: #dddfd4;
+		}
 
-#weatherResultsDiv p {
-    color: white;
-}
+		#right-panel h3 {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			margin-top: 0px;
+			letter-spacing: 1px;
+			color: #173e42;
+			text-align: center;
+		}
 
-#weatherResultsDiv strong {
-    font-size: 20px;
-    display: inline-block;
-    margin-top: 2px;
-}
+		#right-panel hr {
+			width: 200px;
+			background-color: #3fb0ac;
+			height: 2px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			border-style: none;
+		}
 
- #displayFlex {
- 	display: flex;
- }
+		#right-panel strong {
+			font-size: 200%;
+			display: block;
+			margin-bottom: 5px;
+			color: #173e42;
+		}
 
- #weatherSecondRow {
- 	border-bottom: 1px solid white;
- 	padding-top: 15px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
- }
+		#right-panel button {
+			font-family: 'Righteous', cursive;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 20px;
+			background-color: #173e42;
+			color: #dddfd5;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border: none;
+			margin-top: 20px;
+			border-radius: 4px;
+		}
 
-.currentImg {
-	text-align: center;
-	background-color: white;
-	margin-left: 15px;
-	margin-right: 15px;
-	width: 80px;
-	height: 80px;
-	padding: 0;
-	line-height: 55px;
-	border-radius: 4px;
-	border: 2px solid #3fb0ac;
-}
+		#right-panel button:hover {
+			background-color: #3fb0ac;
+			color: #fae596;
+		}
 
-#threeDayForecast {
-	color: white;
-}
-
-#threeDayForecast strong {
-	color: #fae595;
-	font-size: 15px;
-}
-
-.weatherImgs {
-	background-color: white;
-	margin-right: 15px;
-	margin-bottom: 5px;
-	height: 40px;
-	padding: 0;
-	line-height: 55px;
-	border-radius: 4px;
-	border: 2px solid #3fb0ac;
-}
-
-/*Recommendations*/
-
-#recommendationsDiv {
-    color: #dddfd4;
-    padding: 30px;
-    padding-left: 15px;
-    display: inline-block;
-    min-height: 320px;
-    padding-left: 30px;
- }
-
-#recommendationsDiv h3 {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	margin-top: 0px;
-	letter-spacing: 1px;
-	text-align: center;
-}
-
-#recommendationsDiv hr {
-	width: 200px;
-	background-color: #dddfd4;
-	height: 2px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	border-style: none;
-}
-#tipDiv {
-	    display: table;
-}
-
-#roadTipText {
-	text-align: center;
-	display: table-cell;
-	vertical-align: middle;
-	font-size: 150%;
-	color: #fbe596;
-	letter-spacing: 1px;
-}
-
-#roadTipText img {
-	height: 200px;
-    margin: -40px 0px;
-}
+		#tripDataButtonsDiv {
+			text-align: center;
+		}
 
 
- /* Past Adventures Div and Container */
-#pastAdventuresDiv {
-	background-color: #3fb0ac;
-	color: white;
-	padding-bottom: 30px;
-}
+/*WEATHER CONDITIONS AND ROAD TIP*/
+	#wrResultsDiv {
+		background-color: #173e43;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 
-#pastAdventuresDiv h3 {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	text-align: center;
-	margin-top: 30px;
-	letter-spacing: 1px;
-}
+		/*WEATHER CONDITIONS*/
+			#weatherResultsDiv {
+				color: #fae595;
+				padding-left: 0;
+				padding-right: 30px
+				margin-top: 30px;
+			}
 
-#pastAdventuresDiv hr {
-	width: 200px;
-	background-color: #fae596;
-	height: 2px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
+			#weatherResultsDiv h3 {
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+				margin-top: 0px;
+				letter-spacing: 1px;
+				text-align: center;
+			}
 
-#pastAdventuresDiv th {
-	color: #173e43;
-	text-align: center;
-}
+			#weatherResultsDiv hr {
+				width: 200px;
+				background-color: #fae596;
+				height: 2px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border-style: none;
+			}
 
-#pastAdventuresDiv tr {
-	vertical-align: middle;
+			#weatherResultsDiv p {
+				color: white;
+			}
 
-}
+			#weatherResultsDiv strong {
+				font-size: 20px;
+				display: inline-block;
+				margin-top: 2px;
+			}
 
-#pastAdventuresDiv td {
-	vertical-align: middle;
-	text-align: center;
-}
+			#displayFlex {
+				display: flex;
+			}
+
+			#weatherSecondRow {
+				border-bottom: 1px solid white;
+				padding-top: 15px;
+				padding-bottom: 30px;
+				margin-bottom: 30px;
+			}
+
+			.currentImg {
+				text-align: center;
+				background-color: white;
+				margin-left: 15px;
+				margin-right: 15px;
+				width: 80px;
+				height: 80px;
+				padding: 0;
+				line-height: 55px;
+				border-radius: 4px;
+				border: 2px solid #3fb0ac;
+			}
+
+			#threeDayForecast {
+				color: white;
+			}
+
+			#threeDayForecast strong {
+				color: #fae595;
+				font-size: 15px;
+			}
+
+			.weatherImgs {
+				background-color: white;
+				margin-right: 15px;
+				margin-bottom: 5px;
+				height: 40px;
+				padding: 0;
+				line-height: 55px;
+				border-radius: 4px;
+				border: 2px solid #3fb0ac;
+			}
+
+		/*RECOMMENDATIONS*/
+			#recommendationsDiv {
+				color: #dddfd4;
+				display: inline-block;
+				min-height: 320px;
+				padding-left: 20px;
+				padding-right: 0px;
+				margin-top: 30px;
+			}
+
+			#roadTipSeconDiv {
+				
+			}
+
+			#recommendationsDiv h3 {
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+				margin-top: 0px;
+				letter-spacing: 1px;
+				text-align: center;
+			}
+
+			#recommendationsDiv hr {
+				width: 200px;
+				background-color: #dddfd4;
+				height: 2px;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				border-style: none;
+			}
+
+			#tipDiv {
+				display: table;
+				padding: 0 10%;
+			}
+
+			#roadTipText {
+				text-align: center;
+				display: table-cell;
+				vertical-align: middle;
+				font-size: 150%;
+				color: #fbe596;
+				letter-spacing: 1px;
+			}
+
+			#roadTipText img {
+				height: 150px;
+				margin-top: -30px;
+				margin-bottom: -10px;
+			}
 
 
-#removeEntryButton {
-	background-color: #fae596;
-	color: #183e43;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: bold;
-	letter-spacing: 1px;
-	padding: 3px 20px;
-	vertical-align: middle;
-	border: none;
-}
+/*PAST ADVENTURES*/
+	#pastAdventuresDiv {
+		background-color: #3fb0ac;
+		color: white;
+		padding-bottom: 30px;
+	}
 
-#removeEntryButton:hover {
-	background-color: #183e43;;
-	color: #fae596;
-}
+	#pastAdventuresDiv h3 {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		text-align: center;
+		margin-top: 30px;
+		letter-spacing: 1px;
+	}
+
+	#pastAdventuresDiv hr {
+		width: 200px;
+		background-color: #fae596;
+		height: 2px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	#pastAdventuresDiv th {
+		color: #173e43;
+		text-align: center;
+	}
+
+	#pastAdventuresDiv tr {
+		vertical-align: middle;
+	}
+
+	#pastAdventuresDiv td {
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	#removeEntryButton {
+		background-color: #fae596;
+		color: #183e43;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: bold;
+		letter-spacing: 1px;
+		padding: 3px 20px;
+		vertical-align: middle;
+		border: none;
+	}
+
+	#removeEntryButton:hover {
+		background-color: #183e43;;
+		color: #fae596;
+	}
 
 
 /* RESET BUTTON */
-#resetButton {
-	background-image: url("../images/resetBackground.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    background-size: cover;
-	margin-bottom: 60px;
-	padding: 30px;
-	text-align: center;
-}
+	#resetButton {
+		background-image: url("../images/resetBackground.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		-webkit-background-size: cover;
+		background-size: cover;
+		margin-bottom: 60px;
+		padding: 30px;
+		text-align: center;
+	}
 
-#resetButton button {
-	font-family: 'Righteous', cursive;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 20px;
-	background-color: #fae596;
-	color: #3fb0ac;
-	padding: 15px 30px;
-	border: none;
-	margin: 5% 0;
-	border-radius: 4px;
-}
+	#resetButton button {
+		font-family: 'Righteous', cursive;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 20px;
+		background-color: #fae596;
+		color: #3fb0ac;
+		padding: 15px 30px;
+		border: none;
+		margin: 5% 0;
+		border-radius: 4px;
+	}
 
-#resetButton button:hover {
-	background-color: #3fb0ac;
-	color: #fae596;
-}
+	#resetButton button:hover {
+		background-color: #3fb0ac;
+		color: #fae596;
+	}
 
 
+/*FOOTER*/
+	.footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 60px;	/* Set the fixed height of the footer here */
+		background-color: #173e43;
+		color: white;
+		text-align: center;
+		font-size: 75%;
+	}
 
-/* footer */
-.footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	/* Set the fixed height of the footer here */
-	height: 60px;
-	background-color: #173e43;
-	color: white;
-	text-align: center;
-	font-size: 75%;
-}
+	#footer {
+		display: table;
+		height: 100%;
+	}
 
-#footer {
-  display: table;
-  height: 100%;
-}
+	#footer p {
+		display: table-cell;
+		margin: 0;
+		vertical-align: middle;
+	}
 
-#footer p {
-  display: table-cell;
-  margin: 0;
-  vertical-align: middle;
-}
+/*MODALS*/
+	/*BACKGROUND*/
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			padding-top: 60px; /* Location of the box */
+			padding-bottom: 50px
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+	/* CONTENT */
+		.modal-content {
+			position: relative;
+			background-color: white;
+			margin: 10px auto;
+			padding: 5px;
+			border: none;
+			max-width: 1150px;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+			-webkit-animation-name: animatetop;
+			-webkit-animation-duration: 0.4s;
+			animation-name: animatetop;
+			animation-duration: 0.4s;
+			border-radius: 5px;
+			outline: 0;
+		}
 
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
+	/* ANIMATION */
+		@-webkit-keyframes animatetop {
+			from {top:-300px; opacity:0} 
+			to {top:0; opacity:1}
+		}
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
+		@keyframes animatetop {
+			from {top:-300px; opacity:0}
+			to {top:0; opacity:1}
+		}
 
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
+	/* CLOSE BUTTON */
+		.close {
+			color: white;
+			float: right;
+			font-size: 30px;
+			font-weight: bold;
+			font-family: 'Montserrat', sans-serif;
+			opacity: 1;
+		}
 
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
+		.close:hover, .close:focus {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+	/*HEADER*/
+		.modal-header {
+			padding: 15px 15px;
+			background-color: #3fb0ac;
+			color: white;
+			letter-spacing: 1px;
+			font-family: 'Righteous', cursive;
+			margin-bottom: -2px;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
 
-.modal-header {
-    padding: 2px 16px;
-    background-color: #3fb0ac;
-    color: white;
-}
+	/*BODY*/
+		.modal-body {
+			border: 1px solid #3fb0ab;
+			padding: 30px 5px;
+		}
 
-.modal-body {padding: 2px 16px;}
+		.modal-body h3 {
+			color: #173e43;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 200%;
+			letter-spacing: 1px;
+			padding: 2% 8%;
+		}
+	
+	/*FOOTER*/
+		.modal-footer {
+			padding: 15px 15px;
+			background-color: #3fb0ac;
+			color: white;
+			letter-spacing: 1px;
+			font-family: 'Righteous', cursive;
+			margin-top: -2px;
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
 
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #3fb0ac;
-    color: white;
-}
+/*DIRECTIONS MODAL*/
+	table.adp-placemark {
+		background: #dddfd4; !important;
+		border: none; !important;
+		cursor: pointer; !important;
+		margin: auto; !important;
+		vertical-align: middle; !important;
+		max-width: 900px; !important;
+		display: inline-block; !important;
+		margin-bottom: 10px; !important;
+	}
+	.adp-placemark td {
+		background-color: #dddfd4; !important;
+		color: #173e43; !important;
+		padding: 5px; !important;
+	}
+
+	.adp-text {
+		font-family: 'Montserrat', sans-serif; !important;
+		font-size: 150%; !important;
+		font-weight: 600; !important;
+		width: 100%; !important;
+		color: #173e43; !important;
+	}
+
+	.adp-summary, .adp-legal {
+		font-family: 'Montserrat', sans-serif; !important;
+	}
+
+	table.adp-directions {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 10px;
+		display: inline-block;
+	}
+
+	table.adp-directions tr {
+		font-family: 'Montserrat', sans-serif; !important;
+	}
+
+	.adp-directions {
+		display: inline-block;
+	}
