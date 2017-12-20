@@ -60,10 +60,10 @@ function weatherConditions() {
   // console.log(cityArr);
 
  if (cityArr.length < 3) {
- 	bootbox.alert({
-	   message: "Destination must contain at least 'city, state and country' to display accurate weather results for your trip",
-	  size: 'large'
-	  });
+ 	$("#myModal4").css('display', 'block');
+	  	$(".close").on("click", function() {
+	  		$("#myModal4").css('display', 'none');
+	 					 });
  } else {
 
   var stIndex = cityArr.length - 2;
