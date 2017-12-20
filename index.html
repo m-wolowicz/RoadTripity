@@ -23,7 +23,9 @@
 
 	<!-- CDNs neede for bootbox alerts-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js" integrity="sha256-ZQwUJQVoHXhCr4uesYLDjsWxF8MybHrga5PLtL5BcqI=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
 
 	<!-- Linking Google Web Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous" rel="stylesheet">
@@ -157,17 +159,76 @@ We should still see how to solve this -->
 				</div>
 
 				<button id="showDir">Show Directions</button>
-				<button id="hideDir">Hide Directions</button>
+				
 
 			</div>
 		</div>
 	</div>
+	<!-- <div id="myModal2" class="modal"> -->
+
+  <!-- Modal content -->
+  	<!-- <div class="modal-content">
+   	 	<div class="modal-header">
+      		<span class="close"> close &times;</span>
+      		<h2>Error Finding Directions</h2>
+    	</div>
+   	 	<div class="modal-body text-center">
+      		<p>YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..</p>
+      		
+    	</div>
+    	<div class="modal-footer">
+      		<h3>Safe Journey</h3>
+   	 	</div>
+  	</div>
+	
 	<div id="dirDisplay" class="container-fluid text-center">
 		<div class="col-md-2"></div>
 		<div id="dirResults" class="container-fluid col-md-8"></div>
 		<div class="col-md-2"></div>
 	</div>
-	
+</div> -->
+	<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  	<div class="modal-content">
+   	 	<div class="modal-header">
+      		<span class="close"> close &times;</span>
+      		<h2>Don't Exceed the Speed Limit..</h2>
+    	</div>
+   	 	<div id="directions" class="modal-body text-center">
+      		
+      		
+    	</div>
+    	<div class="modal-footer">
+      		<h3>Safe Journey</h3>
+   	 	</div>
+  	</div>
+  </div>
+  	
+
+</div>
+
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  	<div class="modal-content">
+   	 	<div class="modal-header">
+      		<span class="close"> close &times;</span>
+      		<h2>Don't Exceed the Speed Limit..</h2>
+    	</div>
+   	 	<div id="directions" class="modal-body text-center">
+      		
+      		
+    	</div>
+    	<div class="modal-footer">
+      		<h3>Safe Journey</h3>
+   	 	</div>
+  	</div>
+  </div>
+  	
+
+</div>
 	<!--End Section 2: Map Results -->
 
 
@@ -308,7 +369,7 @@ function initMap() {
 	});
 	directionsDisplay.setMap(map);
 	
-	directionsDisplay.setPanel(document.getElementById('dirResults'));
+	directionsDisplay.setPanel(document.getElementById('directions'));
 	
 
 	
@@ -498,11 +559,21 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 		$("#tripDataResults").html("<p> Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + duration + "</strong></p>");
 		gasCostCalculator();
 
-	  } } else {
-	   bootbox.alert({
-	   message: "YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..",
-	  size: 'large'
-	  });
+	   
+	} } else {
+
+		//alert("error");
+	  	$("#myModal2").css('display', 'block');
+	  	$(".close").on("click", function() {
+	  		$("#myModal2").css('display', 'none');
+	  	});
+	  	// var message = "YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..";
+    // $('#alertModal').find('.modal-body p').text(message);
+    // $('#alertModal').modal('show')
+	  //  bootbox.alert({
+	  //  message: "YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..",
+	  // size: 'large'
+	  // });
 	  }
 	});
   }

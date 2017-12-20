@@ -1,22 +1,51 @@
 //IMPORTANT!
 $(document).ready(function() {
 
-$("#hideDir").hide();
-	$("#showDir").on('click', function(event) {
-	event.preventDefault();
-	$("#dirDisplay").show();
-	$("#hideDir").show();
 	
-})
+	
 
-	$("#hideDir").on('click', function(event){
-		event.preventDefault();
-		$("#hideDir").hide();
-		$("#dirDisplay").hide();
-		$("#ShowDir").show();
+	// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("showDir");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// $("#hideDir").hide();
+// 	$("#showDir").on('click', function(event) {
+// 	event.preventDefault();
+// 	$("#dirDisplay").show();
+// 	$("#hideDir").show();
+	
+// })
+
+// 	$("#hideDir").on('click', function(event){
+// 		event.preventDefault();
+// 		$("#hideDir").hide();
+// 		$("#dirDisplay").hide();
+// 		$("#ShowDir").show();
 		
 
-	})
+// 	})
 
 // FUNCTIONS
 //calendar input restricting to future dates only
@@ -478,6 +507,100 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 // Lines that push data to the databse. 
 
 }
+	var cordArr = [];
+		
+		function getLatLong(ct,st,ct2,st2) {
+		
+	  	
+	  	var geocoder = new google.maps.Geocoder();
+    	
+         geocoder.geocode( { 'address': ct+', ' + st}, function(results, status) {
+       	 //var cordArr;
+          
+            var latt = results[0].geometry.location.lat();
+            var long = results[0].geometry.location.lng();
+            
+            var queryUrlThree = "https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=" + latt + "&longitude=" + long + "&apikey=NmMJRy0akJzH7eImI0CF2696qrVYjzYe"
+          
+          $.ajax({url: queryUrlThree, method: "GET"})
+          	.done(function(response) {
+          		console.log(response);
+
+          	var airp =  response[0].airport;
+          	console.log(airp);
+            
+            	var geocoder2 = new google.maps.Geocoder();
+            	geocoder2.geocode( { 'address': ct2+', ' + st2}, function(results, status) {
+            //console.log(cordArr);
+            
+           		var latt2 = results[0].geometry.location.lat();
+           		var long2 = results[0].geometry.location.lng();
+
+           		  var queryUrlFour = "https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=" + latt2 + "&longitude=" + long2 + "&apikey=NmMJRy0akJzH7eImI0CF2696qrVYjzYe"
+          
+          $.ajax({url: queryUrlFour, method: "GET"})
+          	.done(function(response) {
+          		console.log(response);
+
+          	var airp2 =  response[0].airport;
+          	console.log(airp2);
+
+          	var depDate = $("#arrivalDate").val();
+          	
+          	var queryUrlFive = "https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=NmMJRy0akJzH7eImI0CF2696qrVYjzYe&origin=" + airp + "&destination=" + airp2 + "&departure_date=" + depDate + ""
+
+          	
+          		 $.ajax({url: queryUrlFive, method: "GET"})
+          	.done(function(response,status) {
+          		// if (status === "OK") {
+          		console.log(response);
+          		var fltPrice = response.results[0].fare.price_per_adult.total_fare;
+          		console.log(fltPrice);
+          		var airLine = response.results[0].itineraries[0].outbound.flights[0].marketing_airline;
+
+          		$("#gasCalcResults").append("<p> Lowest available AirFare is with " + airLine + ":<strong>" + '$ ' + fltPrice + " </strong>incl. tax</p>");
+// } else {
+
+// $("#gasCalcResults").append("<p> Fare not available for selected date and destination through RoadTripiyu</p>");
+
+// }
+          	})
+
+
+})
+ })
+            })
+          })
+ 
+    	
+    	
+}
+		
+
+
+        
+// var airpCodeArr = [];
+
+
+
+// 	function getAirpCode(latt,long) {
+// 		console.log(latt,long);
+//             queryUrlThree = "https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=" + latt + "&longitude=" + long + "&apikey=NmMJRy0akJzH7eImI0CF2696qrVYjzYe"
+          
+//           $.ajax({url: queryUrlThree, method: "GET"})
+//           	.done(function(response) {
+//           		console.log(response);
+//           	var airp =  response[0].airport;
+          	 
+          	
+//           	airpCodeArr.push(airp);
+//           	console.log(airp);
+//           })
+          	
+// }
+
+     
+    
 
 
 
@@ -621,20 +744,51 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 
     var arrivalDate = $("#arrivalDate").val().trim(); 
     var tripDuration = $("#tripDuration").val().trim();    
+    var cityOneRaw = startingPoint;
     var cityRaw = destination;
 
    //splitting raw city information into an array of strings
+   
+   var cityOneArr = cityOneRaw.split(",");
+   var stOneIndex = cityOneArr.length - 2;
+   var ctOneIndex = cityOneArr.length -3;
+
    var cityArr = cityRaw.split(",");
    var stIndex = cityArr.length - 2;
    var ctIndex = cityArr.length - 3;
 
+   var cityOne = cityOneArr[ctOneIndex];
+   var stOne = cityOneArr[stOneIndex];
    var city = cityArr[ctIndex];
-   var st = cityArr[stIndex];    
+   var st = cityArr[stIndex]; 
+   		console.log(cityOne);
+       	console.log(stOne);
+       	console.log(city);
+       	console.log(st); 
+	
+
+    getLatLong(cityOne,stOne,city,st);
+    //getLatLong(city,st)
+    console.log(cordArr);
+    // console.log(cordArr[0]);
+    // console.log(cordArr[1]);
+    // // getAirpCode(cordArr[0],cordArr[1]);
+    // // getAirpCode(cordArr[2],cordArr[3]);
+    // console.log(airpCodeArr);
+    
+    
+
+   //var locTwo = getLatLong(city,st);
+       // var locOne = getAirpCode(cityOne,stOne);
+       // var locTwo = getAirpCode(city,st);
+       //console.log(locOne);
+       //console.log(locTwo); 
+       	
 
     var content =  { 
        name: name, 
        travelersTotal: travelersTotal, 
-       startingPoint: city+ ", "+st,  
+       startingPoint: cityOne+ ", "+stOne,  
        destination: city+ ", "+st,
        arrivalDate: arrivalDate, 
        tripDuration: tripDuration 
@@ -643,7 +797,7 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 
     database.ref("/adventures").push(content);
 
-
+		
 		//Calling weatherConditions function
 		weatherConditions();
 
@@ -651,7 +805,7 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 		weatherRecommendations();
 
 		//gasCostCalculator();
-
+		
 		//Calling the populatePastAdventures function
 		//populatePastAdventures();
 
