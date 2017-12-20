@@ -1,48 +1,12 @@
 //IMPORTANT!
 $(document).ready(function() {
 
-	// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("showDir");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-// $("#hideDir").hide();
-// 	$("#showDir").on('click', function(event) {
-// 	event.preventDefault();
-// 	$("#dirDisplay").show();
-// 	$("#hideDir").show();
 	
-// })
-
-// 	$("#hideDir").on('click', function(event){
-// 		event.preventDefault();
-// 		$("#hideDir").hide();
-// 		$("#dirDisplay").hide();
-// 		$("#ShowDir").show();
-		
-
-// 	})
+$("#showDir").css('display', 'block');
+	  	$(".close").on("click", function() {
+	  		$("#myModal").css('display', 'none');
+	 					 });
+	
 
 // FUNCTIONS
 //calendar input restricting to future dates only
@@ -582,8 +546,33 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 	//On click event for the SUBMIT BUTTON that activates the entire process
 	$('#submit').on('click', function(event){
 
+
 		// This prevents the form from trying to submit itself and reseting the page.
 		event.preventDefault();
+		var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("showDir");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
   // Variables for the past adventures table 
 
