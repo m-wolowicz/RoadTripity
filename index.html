@@ -9,7 +9,7 @@
 	<!-- Linking Normalize.css -->
 	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
 
-	<!-- Setting the Viewport -->
+	<!-- Setting the View-port -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Linking jQuery CDN -->
@@ -21,11 +21,10 @@
 	<!-- Linking our own CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	<!-- CDNs neede for bootbox alerts-->
+	<!-- CDNs needed for bootbox alerts-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js" integrity="sha256-ZQwUJQVoHXhCr4uesYLDjsWxF8MybHrga5PLtL5BcqI=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-
 
 	<!-- Linking Google Web Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous" rel="stylesheet">
@@ -46,7 +45,7 @@
 <div class="jumbotron">
 	<div class="container">
 		<h1>RoadTripity!</h1>
-		<p>Plan your next road trip with the help of RoadTripity. To begin, simply enter the address of the begining of your journey and the address for your final destination.</p>
+		<p>Plan your next road trip with the help of RoadTripity. To begin, simply enter the address of the beginning of your journey and the address for your final destination.</p>
 	</div>
 </div>
 <!-- End Jumbotron -->
@@ -75,7 +74,7 @@
 					<!-- Number of Passengers Field -->
 					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 						<div class="form-group">
-							<label for="numberTravelers">How Many Passengers Total</label>
+							<label for="numberTravelers">How Many Passengers Are Traveling With You?</label>
 							<input type="number" min=1 oninput="validity.valid||(value='');" class="form-control" id="numberTravelers" placeholder="Passengers">
 						</div>
 					</div>
@@ -119,7 +118,7 @@
 
 				<!-- BUTTON -->
 				<div class="text-center">
-				  <button id="submit" class="btn btn-default">Submit</button>
+					<button id="submit" class="btn btn-default">Submit</button>
 				</div>
 			</form>
 		</div>
@@ -127,148 +126,168 @@
 	</div>
 	<!--End Section 1: User input form-->
 
+
 </div> <!-- This is the PAGE CONTAINER closing tag -->
 
-<!-- I had to remove the map from the page container above for it work.
-We should still see how to solve this -->
+<!--	I had to remove the map from the page container above for it to work.
+		We should still see how to solve this -->
 
 
 	<!--Begin Section 2: MAP and Trip Data-->
 	<div id="floating-panel"></div>
+	
 	<div class="container-fluid" id="mapTripDataDiv">
+
 		<!-- VIDEO -->
-		<div id="overlay"></div>
-		<div id="videoText">
-			<p>How far? How log? How much?… All your road trip answers with one click!</p>
-		</div>
-		<video preload="true" autoplay="autoplay" loop="loop" volume="0" id="backgroundVideo">
-			<source src="assets/videos/road.mp4" type="video/mp4">
-		</video>       
+			<div id="overlay"></div> <!-- This is a black overlay on top of the video to make the video darker -->
+			<!-- Text on top of video -->
+			<div id="videoText">
+				<p>How far? How long? How much? How cold?… All your road trip answers with one click!</p>
+			</div>
+			<!-- Video -->
+			<video preload="true" autoplay="autoplay" loop="loop" volume="0" id="backgroundVideo">
+				<source src="assets/videos/road.mp4" type="video/mp4">
+			</video>
+
 		<!-- MAP -->
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="map-container">
 				<div id="map"></div>
 			</div>
+
 		<!-- Trip Data -->
 		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="background-color: #dddfd5;">
 			<div id="right-panel">
 				<h3>TRIP DATA</h3>
 				<hr>
-				<div class="col-md-6" id="tripDataResults">
-				</div>
-				<div class="col-md-6" id="gasCalcResults">
-				</div>
-				<button id="showDir">Show Directions</button>
+					<!-- Areas for Trip Data to load -->
+					<div class="col-md-4" id="tripDataResults">
+					</div>
+					<div class="col-md-4" id="gasCalcResults">
+					</div>
+					<div class="col-md-4" id="flightResults">
+					</div>
+					<br>
+				<!-- Button -->
+					<div id="tripDataButtonsDiv">
+						<button id="showDir">Show Directions</button>
+					</div>
 			</div>
 		</div>
 	</div>
-	<!-- <div id="myModal2" class="modal"> -->
-
-  <!-- Modal content -->
-  	<!-- <div class="modal-content">
-   	 	<div class="modal-header">
-      		<span class="close"> close &times;</span>
-      		<h2>Error Finding Directions</h2>
-    	</div>
-   	 	<div class="modal-body text-center">
-      		<p>YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..</p>
-      		
-    	</div>
-    	<div class="modal-footer">
-      		<h3>Safe Journey</h3>
-   	 	</div>
-  	</div>
-	
-	<div id="dirDisplay" class="container-fluid text-center">
-		<div id="dirResults" class="container"></div>
-	</div>
-</div> -->
-	<!-- The Modal -->
-
-<div id="myModal3" class="modal">
-
-  <!-- Modal content -->
-  	<div class="modal-content">
-   	 	<div class="modal-header">
-      		<span class="close"> close &times;</span>
-      		<h2>Well...that'not good...</h2>
-    	</div>
-   	 	<div class="modal-body text-center">
-      		<h3> Sorry we could not provide gas cost for this trip. It appears that updates current gas prices are not available for part of the areas you are driving to..</h3>
-      		
-    	</div>
-    	<div class="modal-footer">
-      		<h3>Safe Journey</h3>
-   	 	</div>
-  	</div>
-  </div>
-  	
-
-</div>
-
-<div id="myModal4" class="modal">
-
-  <!-- Modal content -->
-  	<div class="modal-content">
-   	 	<div class="modal-header">
-      		<span class="close"> close &times;</span>
-      		<h2>Well...that's not good...</h2>
-    	</div>
-   	 	<div class="modal-body text-center">
-      		<h3> Destination must contain at least 'city, state and country' to display accurate weather results for your trip</h3>
-      		
-    	</div>
-    	<div class="modal-footer">
-      		<h3>Safe Journey</h3>
-   	 	</div>
-  	</div>
-  </div>
-  	
-
-</div>
-
-
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  	<div class="modal-content">
-   	 	<div class="modal-header">
-      		<span class="close"> close &times;</span>
-      		<h2>Don't Exceed the Speed Limit..</h2>
-    	</div>
-   	 	<div id="directions" class="modal-body text-center">
-      		
-      		
-    	</div>
-    	<div class="modal-footer">
-      		<h3>Safe Journey</h3>
-   	 	</div>
-  	</div>
-  </div>
-  	
-
-</div>
-
-<div id="myModal2" class="modal">
-
-  <!-- Modal content -->
-  	<div class="modal-content">
-   	 	<div class="modal-header">
-      		<span class="close"> close &times;</span>
-      		<h2>Well...that'not good...</h2>
-    	</div>
-   	 	<div class="modal-body text-center">
-      		<h3> YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..</h3>
-      		
-    	</div>
-    	<div class="modal-footer">
-      		<h3>Safe Journey</h3>
-   	 	</div>
-  	</div>
-  </div>
-  	
-
-</div>
 	<!--End Section 2: Map Results -->
+
+
+	<!-- BEGIN MODALS-->
+
+		<!-- Modal 3 -->
+		<div id="myModal3" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<span class="close">X</span>
+					<h2>Well... that's not good...</h2>
+				</div>
+
+				<!-- Modal Body -->
+				<div class="modal-body text-center">
+					<h3> Sorry we could not provide gas cost for this trip. It appears that updates current gas prices are not available for part of the areas you are driving to.</h3>
+				</div>
+
+				<!-- Modal Footer -->
+				<div class="modal-footer">
+					<h3>Have A Safe Journey</h3>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- </div> ???? -->
+
+		<!-- Modal 4 -->
+		<div id="myModal4" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<span class="close">X</span>
+					<h2>Well... that's not good...</h2>
+				</div>
+
+				<!-- Modal Body -->
+				<div class="modal-body text-center">
+					<h3>Destination must contain at least 'City, State and Country' to display accurate weather results for your trip.</h3>
+				</div>
+
+				<!-- Modal Footer -->
+				<div class="modal-footer">
+					<h3>Have A Safe Journey</h3>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- </div>?????? -->
+
+		<!-- myModal -->
+		<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<span class="close">X</span>
+					<h2>Don't Exceed the Speed Limit..</h2>
+				</div>
+
+				<!-- Modal Body -->
+				<div id="directions" class="modal-body text-center">
+				</div>
+
+				<!-- Modal Footer -->
+				<div class="modal-footer">
+					<h3>Have A Safe Journey</h3>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- </div> ????? -->
+
+		<!-- Modal 2 -->
+		<div id="myModal2" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<span class="close">X</span>
+					<h2>Well... that's not good...</h2>
+				</div>
+
+				<!-- Modal Body -->
+				<div class="modal-body text-center">
+					<h3> YOU CAN'T DRIVE THERE... It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent 'ya.</h3>
+				</div>
+
+				<!-- Modal Footer -->
+				<div class="modal-footer">
+					<h3>Have A Safe Journey</h3>
+				</div>
+
+			</div>
+		</div>
+		<!-- </div> ???? -->
+	<!-- END MODALS -->
 
 
 	<!--Begin Section 3: Weather and Recommendations results-->
@@ -276,7 +295,7 @@ We should still see how to solve this -->
 		<div class="container">
 
 			<!--Weather Results BY RYAN-->
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="weatherResultsDiv">
+			<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7" id="weatherResultsDiv">
 				<h3>WEATHER CONDITIONS</h3>
 				<hr>
 
@@ -333,14 +352,15 @@ We should still see how to solve this -->
 
 
 			<!--Recommendations TO BE COMPLETED BY MELISSA-->
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="recommendationsDiv">
-				<h3>ROAD TIP</h3>
-				<hr>
-				<div id="tipDiv">
-					<div id="roadTipText">
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" id="recommendationsDiv">
+				<div id="roadTipSeconDiv">
+					<h3>ROAD TIP</h3>
+					<hr>
+					<div id="tipDiv">
+						<div id="roadTipText">
 					</div>
 				</div>
-				
+				</div>	
 			</div><!--END OF Recommendations BY MELISSA-->
 
 		</div>
@@ -396,241 +416,265 @@ We should still see how to solve this -->
 <!--End Page Content-->
 
 
-<!-- These 2 script tags need to be in HTML per googlemaps API.
-Cannot be moved to seperate .js file due to API restrictions. -->
+<!-- 	These 2 script tags need to be in HTML per Google Maps API.
+		Cannot be moved to separate .js file due to API restrictions. -->
+
 <script>
-function initMap() {
-	$("#map").css('visibility', 'hidden');
-	$("#right-panel").css('visibility', 'hidden');
-	$("#wrResultsDiv").hide();
-	var distance = 0;
-	var directionsDisplay = new google.maps.DirectionsRenderer;
-	var directionsService = new google.maps.DirectionsService;
-	var options = {types: ['(cities)']};
-	var inputOne = document.getElementById('startingPoint');
-	var inputTwo = document.getElementById('destination');
-	var searchBoxOne = new google.maps.places.Autocomplete(inputOne, options);
-	var searchBoxTwo = new google.maps.places.Autocomplete(inputTwo, options);
-	var map = new google.maps.Map(document.getElementById('map'), {
-	  zoom: 4,
-	  center: {lat: 41.85, lng: -87.65}
-	});
-	directionsDisplay.setMap(map);
-	
-	directionsDisplay.setPanel(document.getElementById('directions'));
-	
 
-	
-	var control = document.getElementById('floating-panel');
-	control.style.display = 'block';
-	map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-	var onChangeHandler = function() {
-	  calculateAndDisplayRoute(directionsService, directionsDisplay);
-	};
-   // document.getElementById('submit').addEventListener('click', onChangeHandler);
-	$("#submit").on('click', function(event) {
-	event.preventDefault();
+//This function initializes the Google Map
+	function initMap() {
 
-	//Hiding video and video overlay - MW
-	$("#videoText").css("display", "none");
-	$("#overlay").css("display", "none");
-	$("#backgroundVideo").css("display", "none");
-	$("#mapTripDataDiv").css("overflow", "visible");
+		//Hiding the map and other divs initially
+		$("#map").css('visibility', 'hidden');
+		$("#right-panel").css('visibility', 'hidden');
+		$("#wrResultsDiv").hide();
 
+		//Creating variables
+		var distance = 0;
+		var directionsDisplay = new google.maps.DirectionsRenderer;
+		var directionsService = new google.maps.DirectionsService;
+		var options = {types: ['(cities)']};
+		var inputOne = document.getElementById('startingPoint');
+		var inputTwo = document.getElementById('destination');
+		var searchBoxOne = new google.maps.places.Autocomplete(inputOne, options);
+		var searchBoxTwo = new google.maps.places.Autocomplete(inputTwo, options);
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			center: {lat: 41.85, lng: -87.65}
+		});
 
-	$("#dirDisplay").hide();
-	
+		//Setting the map
+		directionsDisplay.setMap(map);
+		directionsDisplay.setPanel(document.getElementById('directions'));
 
-$("#map").css('visibility', 'visible');
-$("#right-panel").css('visibility', 'visible');
-$("#mapTripDataDiv").css('background-image', 'none');
-$("#wrResultsDiv").show();
+		//Comment
+		var control = document.getElementById('floating-panel');
 
+		control.style.display = 'block';
+		map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
-	onChangeHandler();
+		var onChangeHandler = function() {
+			calculateAndDisplayRoute(directionsService, directionsDisplay);
+		};
 
-	})
-	//document.getElementById('end').addEventListener('change', onChangeHandler);
-  }
+		//On click event for the submit button to hide the video and show the map and other divs hidden above
+		$("#submit").on('click', function(event) {
 
-  function gasCostCalculator() {
+			// This prevents the form from trying to submit itself and reseting the page.
+			event.preventDefault();
 
-	var westObj = {
-		states: ["AK", "AZ", "CA", "HI", "NV", "OR", "WA"],
-		coastId: "R50"
-	} 
-	var eastObj = {
-		states: ["CT", "DC", "DE", "FL", "GA", "MA", "MD","ME", "NC", "NH", "NJ", "NY", "PA", "RI", "SC", "VA", "VT", "WV"],
-		coastId: "R10"
-	}
-	var midObj = {
-		states: ["IA", "IL", "IN", "KS", "KY", "MI", "MN", "MO", "ND", "NE", "OH", "OK", "SD", "TN", "WI"],
-		coastId: "R20"
-	}
-	var gulfObj = {
-		states: ["AL", "AR", "LA", "MS", "NM", "TX"],
-		coastId: "R30"
-	}
-	var rockObj = {
-		states: ["CO", "ID", "MT", "UT", "WY"],
-		coastId: "R40"
-	}
-console.log(eastObj.states);
-	var dgasStRaw = $('#destination').val();
-	console.log(dgasStRaw);
-  	var dgasStArr = dgasStRaw.split(',');
-  	var dgasStIndex = dgasStArr.length - 2;
-  	console.log(dgasStArr[dgasStIndex]);
-  	var dgasSt =  String(dgasStArr[dgasStIndex].trim());
-	   console.log(dgasSt);
+			//Hiding video and video overlay - MW
+			$("#videoText").css("display", "none");
+			$("#overlay").css("display", "none");
+			$("#backgroundVideo").css("display", "none");
 
- 	var ogasStRaw = $('#startingPoint').val();
-  	var ogasStArr = ogasStRaw.split(',');
-  	var ogasStIndex = ogasStArr.length - 2;
-   	var ogasSt = String(ogasStArr[ogasStIndex].trim());
-  		console.log(ogasSt);
+			//Showing Video & other divs
+			$("#mapTripDataDiv").css("overflow", "visible");
+			$("#map").css('visibility', 'visible');
+			$("#right-panel").css('visibility', 'visible');
+			$("#mapTripDataDiv").css('background-image', 'none');
+			$("#wrResultsDiv").show();
 
-  	var testArr = [dgasSt, ogasSt];
-  	console.log(testArr);
-  	
-  	if (westObj.states.indexOf(dgasSt) > -1) {
-  		var areaIdone = westObj.coastId;
-  		
-  	} else if (eastObj.states.indexOf(dgasSt) > -1) {
-  		var areaIdone = eastObj.coastId;
-  		
-  		} else if (gulfObj.states.indexOf(dgasSt) > -1) {
-  			var areaIdone = gulfObj.coastId;
-  			
-  			} else if (rockObj.states.indexOf(dgasSt) > -1) {
-  				var areaIdone = rockObj.coastId;
-  				
-  				} else if (midObj.states.indexOf(dgasSt) > -1) {
-  				var areaIdone = midObj.coastId; 	
-  					
-  					} else {
-  						$("#myModal3").css('display', 'block');
-	  	$(".close").on("click", function() {
-	  		$("#myModal3").css('display', 'none');
-	 					 });
-  					}
-  					console.log(areaIdone);
-  	if (westObj.states.indexOf(ogasSt) > -1) {
-  		var areaIdtwo = westObj.coastId;
-  		
-  	} else if (eastObj.states.indexOf(ogasSt) > -1) {
-  		var areaIdtwo = eastObj.coastId;
-  		
-  		} else if (gulfObj.states.indexOf(ogasSt) > -1) {
-  			var areaIdtwo = gulfObj.coastId;
-  			
-  			} else if (rockObj.states.indexOf(ogasSt) > -1) {
-  				var areaIdtwo = rockObj.coastId;
-  				
-  				} else if (midObj.states.indexOf(ogasSt) > -1) {
-  				var areaIdtwo = midObj.coastId; 	
-  					
-  					} else {
-  						$("#myModal3").css('display', 'block');
-	  	$(".close").on("click", function() {
-	  		$("#myModal3").css('display', 'none');
-	 					 });
-  					}
-  					console.log(areaIdtwo);
-  			
-  			queryURLone = "https://api.eia.gov/series/?api_key=8516f1b4fbf04660a155352d9d29ab82&series_id=PET.EMM_EPM0_PTE_" + areaIdone + "_DPG.W"
-  			queryURLtwo = "https://api.eia.gov/series/?api_key=8516f1b4fbf04660a155352d9d29ab82&series_id=PET.EMM_EPM0_PTE_" + areaIdtwo + "_DPG.W"
-  			
-  			
-  			$.ajax({url: queryURLone, method: "GET"})
-        	.done(function(response) {
-        		
-        		var dgasPrice = parseFloat(response.series[0].data[1][1]);
-        		console.log(dgasPrice);
-        		
-        	
+			//Calling function
+			onChangeHandler();
 
-        			$.ajax({url: queryURLtwo, method: "GET"})
-        			.done(function(response) {
-        				var ogasPrice = parseFloat(response.series[0].data[1][1]);
-        				console.log(ogasPrice);
-        		
-        	
+		})
+	} //End of initMap function
 
-        	var avggasPrice = parseFloat((dgasPrice + ogasPrice) / 2);
-        	console.log(avggasPrice);
-        	var distNumber = distance.split(' ');
-        	console.log(distNumber);
-        	var actNumber = (distNumber[0]).replace(/\,/g,"");
-        	console.log(actNumber);
+//This function gets the gas prices information
+	function gasCostCalculator() {
 
-        	var gasCostOne = parseFloat((actNumber / 30) * avggasPrice).toFixed(2);
+		//Creating variables/objects for each region
+		var westObj = {
+			states: ["AK", "AZ", "CA", "HI", "NV", "OR", "WA"],
+			coastId: "R50"
+		} 
+		var eastObj = {
+			states: ["CT", "DC", "DE", "FL", "GA", "MA", "MD","ME", "NC", "NH", "NJ", "NY", "PA", "RI", "SC", "VA", "VT", "WV"],
+			coastId: "R10"
+		}
+		var midObj = {
+			states: ["IA", "IL", "IN", "KS", "KY", "MI", "MN", "MO", "ND", "NE", "OH", "OK", "SD", "TN", "WI"],
+			coastId: "R20"
+		}
+		var gulfObj = {
+			states: ["AL", "AR", "LA", "MS", "NM", "TX"],
+			coastId: "R30"
+		}
+		var rockObj = {
+			states: ["CO", "ID", "MT", "UT", "WY"],
+			coastId: "R40"
+		}
 
-        	console.log(gasCostOne);
+		//Creating variables
+		var dgasStRaw = $('#destination').val();
+		var dgasStArr = dgasStRaw.split(',');
+		var dgasStIndex = dgasStArr.length - 2;
+		var dgasSt =  String(dgasStArr[dgasStIndex].trim());
+		var ogasStRaw = $('#startingPoint').val();
+		var ogasStArr = ogasStRaw.split(',');
+		var ogasStIndex = ogasStArr.length - 2;
+		var ogasSt = String(ogasStArr[ogasStIndex].trim());
+		var testArr = [dgasSt, ogasSt];
 
-        	$("#gasCalcResults").html("<p>Average Gas Price:<strong>$" + (avggasPrice.toFixed(2)) + "</strong>Est. Gas Expense (mid-size car):<strong>" + '$ ' + gasCostOne + "</strong></p>");
+		//If/Else statement 1
+		if (westObj.states.indexOf(dgasSt) > -1) {
 
-        	})
-})
-}
+			var areaIdone = westObj.coastId;
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-	var start = document.getElementById('startingPoint').value;
-	var end = document.getElementById('destination').value;
-	directionsService.route({
-	  origin: start,
-	  destination: end,
-	  travelMode: 'DRIVING'
-	}, function(response, status) {
-	  if (status === 'OK') {
-	  	$("#tripDataResults").empty();
-		directionsDisplay.setDirections(response);
-		console.log(response);
-	   distance = response.routes[0].legs[0].distance.text;
-	   var duration = response.routes[0].legs[0].duration.text;
-	   console.log(duration);
-	   console.log(response.routes[0].legs[0].distance.text);
-		console.log(response.routes[0].legs[0].duration.text);
+		} else if (eastObj.states.indexOf(dgasSt) > -1) {
 
-		var displayDuration = duration.split(' ');
-		//console.log(displayDuration);
-		if (displayDuration[1] === 'day' || displayDuration[1] === 'days') {
-			var a = parseInt(displayDuration[0]);
-			var b = parseInt(displayDuration[2]);
-			
-			var updDuration = (a * 24) + b;
+			var areaIdone = eastObj.coastId;
 
-			$("#tripDataResults").html("<p>Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + updDuration + ' HOURS' + "</strong></p>");
-			gasCostCalculator();
+		} else if (gulfObj.states.indexOf(dgasSt) > -1) {
+
+			var areaIdone = gulfObj.coastId;
+
+		} else if (rockObj.states.indexOf(dgasSt) > -1) {
+
+			var areaIdone = rockObj.coastId;
+
+		} else if (midObj.states.indexOf(dgasSt) > -1) {
+
+			var areaIdone = midObj.coastId; 	
+
 		} else {
+			$("#myModal3").css('display', 'block');
+			$(".close").on("click", function() {
+				$("#myModal3").css('display', 'none');
+			});
+		}
 
-		$("#tripDataResults").html("<p>Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + duration + "</strong></p>");
-		gasCostCalculator();
+		//If/Else statement 2
+		if (westObj.states.indexOf(ogasSt) > -1) {
 
-	   
-	} } else {
+			var areaIdtwo = westObj.coastId;
 
-		//alert("error");
-	  	$("#myModal2").css('display', 'block');
-	  	$(".close").on("click", function() {
-	  		$("#myModal2").css('display', 'none');
-	  	});
-	  	// var message = "YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..";
-    // $('#alertModal').find('.modal-body p').text(message);
-    // $('#alertModal').modal('show')
-	  //  bootbox.alert({
-	  //  message: "YOU CAN'T DRIVE THERE....It's in a place far far way !! You might want to go the moon. Call 1800-NASA-PLS and tell them we sent ya..",
-	  // size: 'large'
-	  // });
-	  }
-	});
-  }
+		} else if (eastObj.states.indexOf(ogasSt) > -1) {
 
+			var areaIdtwo = eastObj.coastId;
 
+		} else if (gulfObj.states.indexOf(ogasSt) > -1) {
+
+			var areaIdtwo = gulfObj.coastId;
+
+		} else if (rockObj.states.indexOf(ogasSt) > -1) {
+
+			var areaIdtwo = rockObj.coastId;
+
+		} else if (midObj.states.indexOf(ogasSt) > -1) {
+
+			var areaIdtwo = midObj.coastId; 	
+
+		} else {
+			$("#myModal3").css('display', 'block');
+			$(".close").on("click", function() {
+				$("#myModal3").css('display', 'none');
+			});
+		}
+
+		//Creating variables
+		queryURLone = "https://api.eia.gov/series/?api_key=8516f1b4fbf04660a155352d9d29ab82&series_id=PET.EMM_EPM0_PTE_" + areaIdone + "_DPG.W"
+		queryURLtwo = "https://api.eia.gov/series/?api_key=8516f1b4fbf04660a155352d9d29ab82&series_id=PET.EMM_EPM0_PTE_" + areaIdtwo + "_DPG.W"
+
+		//AJAX QUERY
+		$.ajax({
+			url: queryURLone, 
+			method: "GET"
+		}).done(function(response) {
+
+			//Creating variables
+			var dgasPrice = parseFloat(response.series[0].data[1][1]);
+
+			//Second AJAX query
+			$.ajax({
+				url: queryURLtwo, 
+				method: "GET"
+			}).done(function(response) {
+
+				//Creating variables
+				var ogasPrice = parseFloat(response.series[0].data[1][1]);
+				var avggasPrice = parseFloat((dgasPrice + ogasPrice) / 2);
+				var distNumber = distance.split(' ');
+				var actNumber = (distNumber[0]).replace(/\,/g,"");
+				var gasCostOne = parseFloat((actNumber / 30) * avggasPrice).toFixed(2);
+
+				//Populating results to the HTML
+				$("#gasCalcResults").html("<p>Average Gas Price:<strong>$" + (avggasPrice.toFixed(2)) + "</strong>Est. Gas Expense (mid-size car):<strong>" + '$ ' + gasCostOne + "</strong></p>");
+
+				//Logging responses to console
+				console.log("The average gas price is: " + avggasPrice);
+				console.log("The estimated total gas cost is: " +gasCostOne);
+			})
+		})
+	}
+
+//This function calculates the route and displays it
+	function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+		//Creating variables
+		var start = document.getElementById('startingPoint').value;
+		var end = document.getElementById('destination').value;
+
+		directionsService.route({
+
+			origin: start,
+			destination: end,
+			travelMode: 'DRIVING'
+
+		}, function(response, status) {
+
+			//If else statement
+			if (status === 'OK') {
+
+				//Emptying div
+				$("#tripDataResults").empty();
+
+				//setting variables
+				directionsDisplay.setDirections(response);
+				distance = response.routes[0].legs[0].distance.text;
+				var duration = response.routes[0].legs[0].duration.text;
+
+				//Logging responses to console
+				console.log("The total distance to travel by car is: " + distance);
+				console.log("The total duration of the road trip by car is: " + duration);
+
+				//Creating variable
+				var displayDuration = duration.split(' ');
+
+				//Else/If statement
+				if (displayDuration[1] === 'day' || displayDuration[1] === 'days') {
+
+					//Creating variables
+					var a = parseInt(displayDuration[0]);
+					var b = parseInt(displayDuration[2]);
+					var updDuration = (a * 24) + b;
+
+					//Populating response to HTML
+					$("#tripDataResults").html("<p>Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + updDuration + ' HOURS' + "</strong></p>");
+
+					//Calling function
+					gasCostCalculator();
+
+				} else {
+					//Populating response to HTML
+					$("#tripDataResults").html("<p>Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + duration + "</strong></p>");
+
+					//Calling function
+					gasCostCalculator();
+				}
+
+			} else {
+				//Modal Alert
+				$("#myModal2").css('display', 'block');
+				$(".close").on("click", function() {
+					$("#myModal2").css('display', 'none');
+				});
+			}
+		});
+	}
 </script>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTGIHpFEDWOSxrj0u5EWP30GfzwyFbMR4&libraries=places&callback=initMap">
-</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTGIHpFEDWOSxrj0u5EWP30GfzwyFbMR4&libraries=places&callback=initMap"></script>
 
 </body>
 </html>

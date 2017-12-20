@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
 	
-$("#showDir").css('display', 'block');
+$("#showDir").css('display', 'inline-block');
 	  	$(".close").on("click", function() {
 	  		$("#myModal").css('display', 'none');
 	 					 });
@@ -21,7 +21,7 @@ function weatherConditions() {
   //splitting raw city information into an array of strings
   var cityArr = cityRaw.split(',');
 
-  // console.log(cityArr);
+  
 
  if (cityArr.length < 3) {
  	$("#myModal4").css('display', 'block');
@@ -43,7 +43,7 @@ function weatherConditions() {
   dataType : "jsonp",
   async: false,
   success : function(response) {
-    console.log(response);
+    
 
 
 
@@ -136,8 +136,7 @@ function weatherRecommendations() {
 
 	var city = cityArr[ctIndex];
 	var st = cityArr[stIndex];
-	console.log(city);
-	console.log(st);
+	
 
 	//Save the user's destination choice as a variable
 	var userInputDestination = st + '/' + city;
@@ -153,7 +152,7 @@ function weatherRecommendations() {
 
 		  var currentDestinationWeather = "" + response.current_observation.weather + "";
 
-		  console.log(currentDestinationWeather);
+		  
 
 		  //Creating arrays for different types of weather
 		  var rain = [
@@ -487,14 +486,14 @@ database.ref("/adventures").on("child_added", function(snapshot) {
           
           $.ajax({url: queryUrlThree, method: "GET"})
           	.done(function(response) {
-          		console.log(response);
+          		
 
           	var airp =  response[0].airport;
-          	console.log(airp);
+          	
             
             	var geocoder2 = new google.maps.Geocoder();
             	geocoder2.geocode( { 'address': ct2+', ' + st2}, function(results, status) {
-            //console.log(cordArr);
+            
             
            		var latt2 = results[0].geometry.location.lat();
            		var long2 = results[0].geometry.location.lng();
@@ -503,10 +502,10 @@ database.ref("/adventures").on("child_added", function(snapshot) {
           
           $.ajax({url: queryUrlFour, method: "GET"})
           	.done(function(response) {
-          		console.log(response);
+          		
 
           	var airp2 =  response[0].airport;
-          	console.log(airp2);
+          	
 
           	var depDate = $("#arrivalDate").val();
           	
@@ -515,18 +514,19 @@ database.ref("/adventures").on("child_added", function(snapshot) {
           	
           		 $.ajax({url: queryUrlFive, method: "GET"})
           	.done(function(response,status) {
-          		// if (status === "OK") {
-          		console.log(response);
+          		
+         		
           		var fltPrice = response.results[0].fare.price_per_adult.total_fare;
-          		console.log(fltPrice);
+          		var departingAirPortCode = response.results[0].itineraries[0].outbound.flights[0].origin.airport;
           		var airLine = response.results[0].itineraries[0].outbound.flights[0].marketing_airline;
 
-          		$("#gasCalcResults").append("<p> Lowest available AirFare is with " + airLine + ":<strong>" + '$ ' + fltPrice + " </strong>incl. tax</p>");
-// } else {
+          		console.log("The cheapest flight available costs: $" + fltPrice);
+          		console.log("The airline with the cheapest flight is: " + airLine);
+          		console.log("The cheapest flight leaves from: " + departingAirPortCode);
 
-// $("#gasCalcResults").append("<p> Fare not available for selected date and destination through RoadTripiyu</p>");
+          		$("#flightResults").html("<p>Lowest AirFare (+ Tax):<strong>$" + fltPrice + "</strong>Flight Aiport/Airline: <strong>"+ departingAirPortCode + "/" + airLine + "</strong>");
 
-// }
+
           	})
 
 
@@ -549,6 +549,14 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 
 		// This prevents the form from trying to submit itself and reseting the page.
 		event.preventDefault();
+
+		//This moves (scrolls) the browser to the beginning of the results div
+		$('html,body').animate({
+			scrollTop: $("#mapTripDataDiv").offset().top},
+			'slow');
+
+
+
 		var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
@@ -580,12 +588,17 @@ window.onclick = function(event) {
     var travelersTotal = $("#numberTravelers").val().trim();
     var startingPoint = $("#startingPoint").val().trim(); 
     var destination = $("#destination").val().trim(); 
-
-
     var arrivalDate = $("#arrivalDate").val().trim(); 
     var tripDuration = $("#tripDuration").val().trim();    
     var cityOneRaw = startingPoint;
     var cityRaw = destination;
+
+    console.log("The user's input for name is: " + name);
+    console.log("The user's input for number of passengers is: " + travelersTotal);
+    console.log("The user's input for starting point is: " + startingPoint);
+    console.log("The user's input for destination is: " + destination);
+    console.log("The user's input for arrival date is: " + arrivalDate);
+    console.log("The user's input for number of days staying at destination is: " + tripDuration);
 
    //splitting raw city information into an array of strings
    
@@ -601,28 +614,11 @@ window.onclick = function(event) {
    var stOne = cityOneArr[stOneIndex];
    var city = cityArr[ctIndex];
    var st = cityArr[stIndex]; 
-   		console.log(cityOne);
-       	console.log(stOne);
-       	console.log(city);
-       	console.log(st); 
+
 	
 
     getLatLong(cityOne,stOne,city,st);
-    //getLatLong(city,st)
-    console.log(cordArr);
-    // console.log(cordArr[0]);
-    // console.log(cordArr[1]);
-    // // getAirpCode(cordArr[0],cordArr[1]);
-    // // getAirpCode(cordArr[2],cordArr[3]);
-    // console.log(airpCodeArr);
-    
-    
 
-   //var locTwo = getLatLong(city,st);
-       // var locOne = getAirpCode(cityOne,stOne);
-       // var locTwo = getAirpCode(city,st);
-       //console.log(locOne);
-       //console.log(locTwo); 
        	
 
     var content =  { 
@@ -644,10 +640,6 @@ window.onclick = function(event) {
 		//Calling weatherRecommendations function
 		weatherRecommendations();
 
-		//gasCostCalculator();
-		
-		//Calling the populatePastAdventures function
-		//populatePastAdventures();
 
 	});	// End Of On Click Event
 
@@ -665,7 +657,7 @@ window.onclick = function(event) {
 		var tableRow = $(this).parent().parent(); 
 
 		var dataObject = tableRow.data('dataInfo');
-		console.log(dataObject);
+		
 
 		database.ref("/adventures/" + dataObject.id).remove();
 
@@ -675,5 +667,3 @@ window.onclick = function(event) {
 
 
 }); //IMPORTANT! End of Document.Ready
-
-	
