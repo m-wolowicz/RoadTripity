@@ -157,10 +157,7 @@ We should still see how to solve this -->
 				</div>
 				<div class="col-md-6" id="gasCalcResults">
 				</div>
-
 				<button id="showDir">Show Directions</button>
-				
-
 			</div>
 		</div>
 	</div>
@@ -182,9 +179,7 @@ We should still see how to solve this -->
   	</div>
 	
 	<div id="dirDisplay" class="container-fluid text-center">
-		<div class="col-md-2"></div>
-		<div id="dirResults" class="container-fluid col-md-8"></div>
-		<div class="col-md-2"></div>
+		<div id="dirResults" class="container"></div>
 	</div>
 </div> -->
 	<!-- The Modal -->
@@ -251,8 +246,14 @@ We should still see how to solve this -->
 					</span>
 				</div> <!-- END OF FIRST ROW -->
 
-
 				<!-- SECOND ROW -->
+				<div class="row" id="weatherSecondRow">
+					<div class="col-xs-12" id="currConditionLongTxt">	
+					</div>
+				</div>
+				<!-- END OF SECOND ROW -->
+
+				<!-- THIRD ROW -->
 				<div class="row" id= "threeDayForecast">
 					<!-- First forecast Column-->
 					<div class = "col-xs-4">
@@ -283,7 +284,7 @@ We should still see how to solve this -->
 						<!--  WEATHER FORCAST TEXT FOR DAY 3 -->
 						</div>
 					</div>
-				</div> <!-- END OF SECOND ROW -->
+				</div> <!-- END OF THIRD ROW -->
 			</div> <!-- END OF WEATHER RESULTS BY RYAN -->
 
 
@@ -291,8 +292,11 @@ We should still see how to solve this -->
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="recommendationsDiv">
 				<h3>ROAD TIP</h3>
 				<hr>
-				<div id="roadTipText">
+				<div id="tipDiv">
+					<div id="roadTipText">
+					</div>
 				</div>
+				
 			</div><!--END OF Recommendations BY MELISSA-->
 
 		</div>
@@ -315,7 +319,7 @@ We should still see how to solve this -->
 						<th class="destinationHead">Destination</th>
 						<th class="arrivalHead">Arrival Date</th>
 						<th class="durationHead">Duration</th>
-						<th class="travelersHead">Number of Travelers</th>
+						<th class="travelersHead">Total Travelers</th>
 						<th class="removeHead">Remove Adventure</th>
 						</tr>
 					</thead>
@@ -520,7 +524,7 @@ console.log(eastObj.states);
 
         	console.log(gasCostOne);
 
-        	$("#gasCalcResults").html("<p> Est. Gas Expense(mid-size car):<strong>" + '$ ' + gasCostOne + "</strong></p>");
+        	$("#gasCalcResults").html("<p>Average Gas Price:<strong>$" + (avggasPrice.toFixed(2)) + "</strong>Est. Gas Expense (mid-size car):<strong>" + '$ ' + gasCostOne + "</strong></p>");
 
         	})
 })
@@ -552,11 +556,11 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 			
 			var updDuration = (a * 24) + b;
 
-			$("#tripDataResults").html("<p> Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + updDuration + ' HOURS' + "</strong></p>");
+			$("#tripDataResults").html("<p>Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + updDuration + ' HOURS' + "</strong></p>");
 			gasCostCalculator();
 		} else {
 
-		$("#tripDataResults").html("<p> Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + duration + "</strong></p>");
+		$("#tripDataResults").html("<p>Distance to travel:<strong>" + distance + '</strong>' + 'Duration of travel:<strong>' + duration + "</strong></p>");
 		gasCostCalculator();
 
 	   
