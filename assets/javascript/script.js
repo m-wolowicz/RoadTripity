@@ -1,6 +1,9 @@
 //IMPORTANT!
 $(document).ready(function() {
 
+var sandKi = atob("TmhoZUdtdVAzOVRiU3NWZU96RW5qYVE0RTdJZFhtdGE=");
+
+
 	
 $("#showDir").css('display', 'inline-block');
 	  	$(".close").on("click", function() {
@@ -482,7 +485,7 @@ database.ref("/adventures").on("child_added", function(snapshot) {
             var latt = results[0].geometry.location.lat();
             var long = results[0].geometry.location.lng();
             
-            var queryUrlThree = "https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=" + latt + "&longitude=" + long + "&apikey=NmMJRy0akJzH7eImI0CF2696qrVYjzYe"
+            var queryUrlThree = "https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=" + latt + "&longitude=" + long + "&apikey=" + sandKi
           
           $.ajax({url: queryUrlThree, method: "GET"})
           	.done(function(response) {
@@ -498,7 +501,7 @@ database.ref("/adventures").on("child_added", function(snapshot) {
            		var latt2 = results[0].geometry.location.lat();
            		var long2 = results[0].geometry.location.lng();
 
-           		  var queryUrlFour = "https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=" + latt2 + "&longitude=" + long2 + "&apikey=NmMJRy0akJzH7eImI0CF2696qrVYjzYe"
+           		  var queryUrlFour = "https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?latitude=" + latt2 + "&longitude=" + long2 + "&apikey=" + sandKi
           
           $.ajax({url: queryUrlFour, method: "GET"})
           	.done(function(response) {
@@ -509,7 +512,8 @@ database.ref("/adventures").on("child_added", function(snapshot) {
 
           	var depDate = $("#arrivalDate").val();
           	
-          	var queryUrlFive = "https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=NmMJRy0akJzH7eImI0CF2696qrVYjzYe&origin=" + airp + "&destination=" + airp2 + "&departure_date=" + depDate + ""
+          	
+          	var queryUrlFive = "https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=" + sandKi + "&origin=" + airp + "&destination=" + airp2 + "&departure_date=" + depDate + ""
 
           	
           		 $.ajax({url: queryUrlFive, method: "GET"})
