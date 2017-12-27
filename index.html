@@ -420,7 +420,7 @@
 		Cannot be moved to separate .js file due to API restrictions. -->
 
 <script>
-
+	var gasKi = atob("ODUxNmYxYjRmYmYwNDY2MGExNTUzNTJkOWQyOWFiODI=");
 //This function initializes the Google Map
 	function initMap() {
 
@@ -574,8 +574,8 @@
 		}
 
 		//Creating variables
-		queryURLone = "https://api.eia.gov/series/?api_key=8516f1b4fbf04660a155352d9d29ab82&series_id=PET.EMM_EPM0_PTE_" + areaIdone + "_DPG.W"
-		queryURLtwo = "https://api.eia.gov/series/?api_key=8516f1b4fbf04660a155352d9d29ab82&series_id=PET.EMM_EPM0_PTE_" + areaIdtwo + "_DPG.W"
+		queryURLone = "https://api.eia.gov/series/?api_key=" + gasKi + "&series_id=PET.EMM_EPM0_PTE_" + areaIdone + "_DPG.W"
+		queryURLtwo = "https://api.eia.gov/series/?api_key=" + gasKi + "&series_id=PET.EMM_EPM0_PTE_" + areaIdtwo + "_DPG.W"
 
 		//AJAX QUERY
 		$.ajax({
