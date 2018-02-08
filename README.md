@@ -1,4 +1,4 @@
-# Project1-Group5
+# RoadTripity!
 
 Trilogy Education Services Full-Stack Web Developer Program
 
@@ -19,7 +19,7 @@ Week 08-09 Group Project 1
 * Must be Deployed (GitHub Pages or Firebase)
 * Must have User Input Validation
 
-## Project Title: (hidden)
+## Project Title: RoadTripity!
 
 ### Team Members:
 
